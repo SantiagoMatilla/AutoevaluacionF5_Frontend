@@ -21,7 +21,7 @@
 <style scoped>
 
 #knowledge {
-    margin: auto;
+    margin: 8vh auto;
     width: 70%;
     display: flex;
     justify-content: space-around;
