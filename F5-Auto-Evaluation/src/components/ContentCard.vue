@@ -1,23 +1,23 @@
 <script>
-  export default {
+export default {
     data: () => ({
-      length: 4,
-      onboarding: 0,
+        length: 4,
+        onboarding: 0,
     }),
 
     methods: {
-      next () {
-        this.onboarding = this.onboarding + 1 > this.length
-          ? 1
-          : this.onboarding + 1
-      },
-      prev () {
-        this.onboarding = this.onboarding - 1 <= 0
-          ? this.length
-          : this.onboarding - 1
-      },
+        next() {
+            this.onboarding = this.onboarding + 1 > this.length
+                ? 1
+                : this.onboarding + 1
+        },
+        prev() {
+            this.onboarding = this.onboarding - 1 <= 0
+                ? this.length
+                : this.onboarding - 1
+        },
     },
-  }
+}
 </script>
 
 <template>
@@ -29,23 +29,25 @@
                             HTML
                         </v-card-title>
 
-                        <v-card-subtitle>Foster the People</v-card-subtitle>
+                        <v-card-subtitle>Es capaz de crear una UI web estática y adaptable</v-card-subtitle>
 
-                        <v-card-actions>
+                        <!-- <v-card-actions>
                             <v-btn class="ms-2" variant="outlined" size="small">
                                 START RADIO
                             </v-btn>
-                        </v-card-actions>
+                        </v-card-actions> -->
                     </div>
 
                     <div>
                         <v-card theme="dark" flat rounded="0">
                             <v-window v-model="onboarding">
                                 <v-window-item v-for="n in length" :key="`card-${n}`" :value="n">
-                                    <v-card height="200" class="d-flex justify-center align-center">
-                                        <span class="text-h5">
+                                    <v-card height="240" class="progress d-flex justify-center align-center">
+                                        <span class="evaluation text-h5">
                                             Evaluación {{ n }}
                                         </span>
+                                        <v-progress-circular color="error" model-value="14" :size="128"
+                                            :width="12"></v-progress-circular>
                                     </v-card>
                                 </v-window-item>
                             </v-window>
@@ -65,14 +67,14 @@
                     </div>
 
                     <!-- <v-avatar class="ma-3" size="125" rounded="0">
-<v-img src="https://cdn.vuetifyjs.com/images/cards/foster.jpg"></v-img>
-</v-avatar> -->
+                        <v-img src="https://cdn.vuetifyjs.com/images/cards/foster.jpg"></v-img>
+                    </v-avatar> -->
                 </div>
             </v-card></v-carousel-item>
 
-        <v-carousel-item src="https://cdn.vuetifyjs.com/images/cards/hotel.jpg" cover></v-carousel-item>
+        <v-carousel-item height="304" src="https://cdn.vuetifyjs.com/images/cards/hotel.jpg" cover></v-carousel-item>
 
-        <v-carousel-item src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg" cover></v-carousel-item>
+        <v-carousel-item height="304" src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg" cover></v-carousel-item>
     </v-carousel>
 </template>
 
@@ -80,7 +82,7 @@
 .carousel {
     width: 80vw;
     margin: auto;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 .carouselItem {
@@ -91,5 +93,11 @@
     width: 50%;
     height: 100%;
     margin: auto;
+}
+
+.progress {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
 }
 </style>
