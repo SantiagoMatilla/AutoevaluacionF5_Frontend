@@ -22,37 +22,31 @@ export default {
 
 <template>
     <v-carousel hide-delimiters height="fit-content" class="carousel">
-        <v-carousel-item class="carouselItem"> <v-card class="card" color="#1F7087" theme="dark">
-                <div class="d-flex flex-no-wrap justify-space-between align-center">
+        <v-carousel-item class="carouselItem"> <v-card class="card" color="#FF4702" theme="dark">
+                <div class="content d-flex flex-no-wrap justify-space-between align-center">
                     <div>
                         <v-card-title class="text-h5">
                             HTML
                         </v-card-title>
 
                         <v-card-subtitle>Es capaz de crear una UI web estática y adaptable</v-card-subtitle>
-
-                        <!-- <v-card-actions>
-                            <v-btn class="ms-2" variant="outlined" size="small">
-                                START RADIO
-                            </v-btn>
-                        </v-card-actions> -->
                     </div>
 
                     <div>
-                        <v-card theme="dark" flat rounded="0">
+                        <v-card>
                             <v-window v-model="onboarding">
                                 <v-window-item v-for="n in length" :key="`card-${n}`" :value="n">
-                                    <v-card height="240" class="progress d-flex justify-center align-center">
+                                    <v-card height="240" class="progress d-flex justify-center align-center" color="#003D4D">
                                         <span class="evaluation text-h5">
                                             Evaluación {{ n }}
                                         </span>
-                                        <v-progress-circular color="error" model-value="14" :size="128"
+                                        <v-progress-circular color="success" bg-color="blue-grey-lighten-3" model-value="14" :size="128"
                                             :width="12"></v-progress-circular>
                                     </v-card>
                                 </v-window-item>
                             </v-window>
 
-                            <v-card-actions class="justify-space-between">
+                            <v-card-actions class="actions">
                                 <v-btn variant="plain" icon="mdi-chevron-left" @click="prev"></v-btn>
                                 <v-item-group v-model="onboarding" class="text-center" mandatory>
                                     <v-item v-for="n in length" :key="`btn-${n}`" v-slot="{ isSelected, toggle }"
@@ -66,11 +60,9 @@ export default {
                         </v-card>
                     </div>
 
-                    <!-- <v-avatar class="ma-3" size="125" rounded="0">
-                        <v-img src="https://cdn.vuetifyjs.com/images/cards/foster.jpg"></v-img>
-                    </v-avatar> -->
                 </div>
-            </v-card></v-carousel-item>
+            </v-card>
+        </v-carousel-item>
 
         <v-carousel-item height="304" src="https://cdn.vuetifyjs.com/images/cards/hotel.jpg" cover></v-carousel-item>
 
@@ -82,7 +74,6 @@ export default {
 .carousel {
     width: 80vw;
     margin: auto;
-    /* border: 1px solid red; */
 }
 
 .carouselItem {
@@ -95,9 +86,17 @@ export default {
     margin: auto;
 }
 
+.content {
+    margin-left: 1vw;
+}
+
 .progress {
     display: flex;
     flex-direction: column;
     gap: 24px;
+}
+
+.actions {
+    background-color: #003D4D;
 }
 </style>
