@@ -1,16 +1,22 @@
 <script setup>
 import { RouterView } from 'vue-router'
 import FrameworkBanner from './components/FrameworkBanner.vue';
-import Knowledge from './components/Knowledge.vue';
 import ContentCard from './components/ContentCard.vue';
 
 </script>
 
 <template>
-  <FrameworkBanner />
-  <Knowledge />
-  <ContentCard />
-  <RouterView />
+  <body>    
+    <FrameworkBanner />
+    <ContentCard />
+    <RouterView />
+  </body>
 </template>
 
-<style scoped></style>
+<style scoped>
+body {
+  height: 100vh;
+  /* background: linear-gradient(to bottom, white, #0F1523);  */
+}
+
+</style>

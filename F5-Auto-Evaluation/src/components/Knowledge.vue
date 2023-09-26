@@ -1,10 +1,46 @@
 <script setup>
 
+
 </script>
 
 
 <template>
-    <main>
+
+  <v-item-group multiple>
+    <v-container>
+      <v-row>
+        <v-col
+          v-for="n in 7"
+          :key="n"
+
+        >
+          <v-item v-slot="{ isSelected, toggle }">
+            <v-card
+              :color="isSelected ? 'success' : 'red'"
+              class="d-flex align-center"
+              dark
+              height="80"
+              width="80"
+              @click="toggle"
+            >
+              <v-scroll-y-transition>
+                <div
+                  class="text-h7  flex-grow-1 text-center"
+                >
+                  {{ isSelected ? 'Selected' : 'Click Me!' }}
+                </div>
+              </v-scroll-y-transition>
+            </v-card>
+          </v-item>
+        </v-col>
+      </v-row>
+    </v-container>
+  </v-item-group>
+
+
+
+
+    <!-- <main>
         <section id="knowledge">
             <v-sheet class="knowledgeSquare" :height="100" :width="100" rounded :elevation="24">Investigar</v-sheet>
             <v-sheet class="knowledgeSquare" :height="100" :width="100" rounded :elevation="24">Recordar</v-sheet>
@@ -14,12 +50,16 @@
             <v-sheet class="knowledgeSquare" :height="100" :width="100" rounded :elevation="24">Crear</v-sheet>
             <v-sheet class="knowledgeSquare" :height="100" :width="100" rounded :elevation="24">Evaluar</v-sheet>
         </section>
-    </main>
+
+    </main> -->
 </template>
 
 
 <style scoped>
 
+
+
+/* 
 #knowledge {
     margin: 8vh auto;
     width: 70%;
@@ -35,6 +75,7 @@
     font-size: small;
     background-color: var(--secondaryColor);
     color: white;
-}
+}*/
+
 
 </style>

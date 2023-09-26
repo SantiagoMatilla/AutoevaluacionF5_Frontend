@@ -1,35 +1,48 @@
-<script>
-export default {
-    data: () => ({
-        length: 4,
-        onboarding: 0,
-    }),
+<script setup>
+import Knowledge from './Knowledge.vue';
 
-    methods: {
-        next() {
-            this.onboarding = this.onboarding + 1 > this.length
-                ? 1
-                : this.onboarding + 1
-        },
-        prev() {
-            this.onboarding = this.onboarding - 1 <= 0
-                ? this.length
-                : this.onboarding - 1
-        },
-    },
-}
+// export default {
+//     data: () => ({
+//         length: 4,
+//         onboarding: 0,
+//     }),
+
+//     methods: {
+//         next() {
+//             this.onboarding = this.onboarding + 1 > this.length
+//                 ? 1
+//                 : this.onboarding + 1
+//         },
+//         prev() {
+//             this.onboarding = this.onboarding - 1 <= 0
+//                 ? this.length
+//                 : this.onboarding - 1
+//         },
+//     },
+// }
 </script>
 
 <template>
-    <v-carousel hide-delimiters height="fit-content" class="carousel">
+    <v-card color="#0F1523" width="48%" class="card">
+        <div class="d-flex flex-no-wrap justify-space-between align-center">            
+                <v-card-title class="text-h5">
+                    HTML
+                </v-card-title>
+                <Knowledge />
+        </div>
+    </v-card>
+
+
+
+    <!-- <v-carousel hide-delimiters height="fit-content" class="carousel">
         <v-carousel-item class="carouselItem"> <v-card class="card" color="#FF4702" theme="dark">
                 <div class="content d-flex flex-no-wrap justify-space-between align-center">
                     <div>
                         <v-card-title class="text-h5">
                             HTML
                         </v-card-title>
-
                         <v-card-subtitle>Es capaz de crear una UI web estática y adaptable</v-card-subtitle>
+
                     </div>
 
                     <div>
@@ -67,11 +80,16 @@ export default {
         <v-carousel-item height="304" src="https://cdn.vuetifyjs.com/images/cards/hotel.jpg" cover></v-carousel-item>
 
         <v-carousel-item height="304" src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg" cover></v-carousel-item>
-    </v-carousel>
+    </v-carousel> -->
 </template>
 
 <style scoped>
-.carousel {
+.card {
+    margin: auto;
+}
+
+
+/* .carousel {
     width: 80vw;
     margin: auto;
 }
@@ -98,5 +116,5 @@ export default {
 
 .actions {
     background-color: #003D4D;
-}
+} */
 </style>
