@@ -1,5 +1,5 @@
 <script setup>
-
+let knowledgeArray = ["Investigar", "Recordar", "Comprender", "Aplicar", "Analizar", "Crear", "Evaluar"];
 
 </script>
 
@@ -20,14 +20,15 @@
               class="d-flex align-center"
               dark
               height="80"
-              width="80"
+              width="120"
               @click="toggle"
             >
               <v-scroll-y-transition>
                 <div
                   class="text-h7  flex-grow-1 text-center"
                 >
-                  {{ isSelected ? 'Selected' : 'Click Me!' }}
+                  <!-- {{ isSelected ? 'Selected' : 'Click Me!' }} -->
+                  {{ isSelected ? knowledgeArray[n-1] : knowledgeArray[n-1] }}
                 </div>
               </v-scroll-y-transition>
             </v-card>
