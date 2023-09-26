@@ -24,7 +24,7 @@ import Knowledge from './Knowledge.vue';
 
 <template>
     <v-card color="#0F1523" width="64%" class="card">
-        <div class="d-flex flex-no-wrap justify-space-between align-center">            
+        <div class="d-flex flex-no-wrap justify-space-around align-center">            
                 <v-card-title class="text-h5">
                     HTML
                 </v-card-title>
