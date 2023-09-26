@@ -29,12 +29,12 @@
       <v-card-subtitle>
         Competencia  
       </v-card-subtitle>
-      <v-card-subtitle>
+       <v-card-subtitle>
         Competencia  
       </v-card-subtitle>
       <v-card-subtitle>
         Competencia  
-      </v-card-subtitle>
+      </v-card-subtitle> 
   
       <v-card-actions>
         <v-btn class="accessButton"
