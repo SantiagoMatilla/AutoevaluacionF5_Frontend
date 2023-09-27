@@ -1,39 +1,91 @@
 <script setup>
-import example from "../services/example.json"
-import { ref } from "vue";
-const stack = ref();
+// import example from "../services/example.json"
+// import { ref } from "vue";
+// const stack = ref();
 
-fetch(example)
-    .then((response) => {
-        stack.value = response.data;
-    })
+// fetch(example)
+//     .then((response) => {
+//         stack.value = response.data;
+//     })
 
 
 </script>
 
 <template>
-    <section class="title">
-        <div class="coderContainer">
-            <v-select class="coderSelection" label="Coder"
+    <section class="banner">
+        <div class="columnDiv">
+            <v-select label="Coder"
                 :items="['California', 'Colorado', 'Florida', 'Georgia', 'Texas', 'Wyoming']" bg-color="white"
-                density="compact" width="300">
+                density="compact" 
+                >
             </v-select>
         </div>
-        <h1>Front End</h1>
-        <v-progress-circular   color="success"
-        bg-color="blue-grey-lighten-3"
-        model-value="20" :size="128" :width="12"></v-progress-circular>
+        <div class="columnDiv">
+            <h1>Front End</h1>
+        </div>
+        <div class="columnDiv">
+            <v-progress-circular color="success" bg-color="blue-grey-lighten-3" model-value="20" :size="100"
+                :width="12"></v-progress-circular>
+        </div>
+    </section>
+    <section class="evaluationDetails">
+        <h2>Nombre Apellido</h2>
+
+  <v-sheet
+    class="mx-auto"
+  >
+    <v-slide-group
+      show-arrows
+    >
+      <v-slide-group-item
+        v-for="n in 4"
+        :key="n"
+        v-slot="{ isSelected, toggle }"
+      >
+        <v-btn
+          class="ma-2"
+          rounded
+          :color="isSelected ? 'primary' : undefined"
+          @click="toggle"
+        >
+          {{ n }}ª Evaluación
+        </v-btn>
+      </v-slide-group-item>
+    </v-slide-group>
+  </v-sheet>
+
     </section>
 </template>
 
 <style scoped>
-.title {
+
+/* ------------------------ */
+/* Borrar tras añadir navbar */
+
+.banner {
+    margin-top: 150px;
+}
+
+/* ------------------------ */
+/* ------------------------ */
+/* ------------------------ */
+
+
+.banner {
     background-color: var(--primaryColor);
     height: 20vh;
+    width: 100vw;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
     align-items: center;
+}
+
+.columnDiv {
+    width: 33vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0% 5%;
 }
 
 h1 {
@@ -43,11 +95,12 @@ h1 {
     font-size: 2rem;
 }
 
-.coderSelection {
-    color: white;
+.evaluationDetails {
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 }
 
-.coderContainer {
-    width: 15%;
-}
 </style>

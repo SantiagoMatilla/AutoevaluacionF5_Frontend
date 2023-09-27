@@ -1,34 +1,15 @@
 <script setup>
 import Knowledge from './Knowledge.vue';
 
-// export default {
-//     data: () => ({
-//         length: 4,
-//         onboarding: 0,
-//     }),
-
-//     methods: {
-//         next() {
-//             this.onboarding = this.onboarding + 1 > this.length
-//                 ? 1
-//                 : this.onboarding + 1
-//         },
-//         prev() {
-//             this.onboarding = this.onboarding - 1 <= 0
-//                 ? this.length
-//                 : this.onboarding - 1
-//         },
-//     },
-// }
 </script>
 
 <template>
     <v-card color="#0F1523" width="64%" class="card">
-        <div class="d-flex flex-no-wrap justify-space-around align-center">            
-                <v-card-title class="text-h5">
-                    HTML
-                </v-card-title>
-                <Knowledge />
+        <div class="d-flex flex-no-wrap justify-space-around align-center">
+            <v-card-title class="text-h5">
+                HTML
+            </v-card-title>
+            <Knowledge />
         </div>
     </v-card>
 
@@ -85,7 +66,7 @@ import Knowledge from './Knowledge.vue';
 
 <style scoped>
 .card {
-    margin: auto;
+    margin: 2vh auto 0;
 }
 
 

@@ -1,14 +1,12 @@
 <script setup>
 import { RouterView } from 'vue-router'
-import FrameworkBanner from './components/FrameworkBanner.vue';
-import ContentCard from './components/ContentCard.vue';
+import Evaluation from './views/Evaluation.vue';
 
 </script>
 
 <template>
-  <body>    
-    <FrameworkBanner />
-    <ContentCard />
+  <body>
+    <Evaluation />
     <RouterView />
   </body>
 </template>
@@ -18,5 +16,4 @@ body {
   height: 100vh;
   /* background: linear-gradient(to bottom, white, #0F1523);  */
 }
-
 </style>
