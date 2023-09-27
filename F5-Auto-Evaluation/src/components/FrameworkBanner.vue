@@ -1,5 +1,5 @@
 <script setup>
-// import example from "../services/example.json"
+import Service from '../services/dataService';
 // import { ref } from "vue";
 // const stack = ref();
 
@@ -8,7 +8,34 @@
 //         stack.value = response.data;
 //     })
 
+const data = Service;
 
+const stack = data.getAll().stack;
+const skill = data.getAll().skill;
+console.log(stack);
+
+// const message = "hola";
+
+
+// export default {
+//     data () {
+//       return {
+//         interval: {},
+//         value: 0,
+//       }
+//     },
+//     beforeUnmount () {
+//       clearInterval(this.interval)
+//     },
+//     mounted () {
+//       this.interval = setInterval(() => {
+//         if (this.value === 100) {
+//           return (this.value = 0)
+//         }
+//         this.value += 10
+//       }, 1000)
+//     },
+//   }
 </script>
 
 <template>
@@ -21,11 +48,15 @@
             </v-select>
         </div>
         <div class="columnDiv">
-            <h1>Front End</h1>
+            <!-- <h1>Front End</h1> -->
+            <h1>{{ stack }}</h1>
         </div>
         <div class="columnDiv">
-            <v-progress-circular color="success" bg-color="blue-grey-lighten-3" model-value="20" :size="100"
-                :width="12"></v-progress-circular>
+            <!-- <v-progress-circular color="white" bg-color="blue-grey-lighten-3" :size="100"
+            :model-value="value"
+                :width="12">
+                {{ value }}
+              </v-progress-circular> -->
         </div>
     </section>
     <section class="evaluationDetails">
