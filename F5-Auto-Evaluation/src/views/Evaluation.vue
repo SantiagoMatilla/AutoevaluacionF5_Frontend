@@ -1,10 +1,10 @@
 <script setup>
-import FrameworkBanner from '../components/FrameworkBanner.vue';
+import StackBanner from '../components/StackBanner.vue';
 import ContentCard from '../components/ContentCard.vue';
 </script>
 
 <template>
-    <FrameworkBanner />
+    <StackBanner />
     <ContentCard />
 </template>
 
