@@ -1,9 +1,7 @@
 <script setup>
-import StackPage from '../components/StackPage.vue'
+
 </script>
 
 <template>
-  <main>
-    <StackPage />
-  </main>
+  <h1>Hola</h1>
 </template>
