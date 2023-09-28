@@ -15,7 +15,7 @@ import SelectCard from '../components/SelectCard.vue';
     height: 90vh;
     margin: 0;
     padding: 0;
-    background-image: url('../assets/img/fondo1.png');
+    background-image: url('../assets/images/fondo1.png');
     background-size: cover;
     background-repeat: no-repeat;
 }

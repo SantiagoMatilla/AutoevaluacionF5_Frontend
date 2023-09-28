@@ -8,7 +8,7 @@
     height="150"
     >
       <div class>
-      <img class="logo" src="../assets/img/Logo-FF5.png" alt="Logo F5">
+      <img class="logo" src="../assets/images/Logo-FF5.png" alt="Logo F5">
       </div>
       <v-spacer></v-spacer>
       
@@ -17,7 +17,7 @@
       <v-spacer></v-spacer>
 
     <a href="">
-      <img class="userMenu" src="../assets/img/User-menu.png" alt="User Menu">
+      <img class="userMenu" src="../assets/images/User-menu.png" alt="User Menu">
     </a>
   </v-toolbar>
 </template>
