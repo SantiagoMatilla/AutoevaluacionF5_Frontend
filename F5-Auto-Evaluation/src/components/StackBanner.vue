@@ -3,7 +3,6 @@ import Service from '../services/dataService';
 
 const data = Service;
 
-
 const stack = data.getAll().stack;
 
 function chooseCoder() {
