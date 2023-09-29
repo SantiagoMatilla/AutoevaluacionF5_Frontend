@@ -42,7 +42,8 @@ const goToBootcamp = () => {
         <v-select
             label="Bootcamp"
             :items="bootcamps"
-            v-model="selectedBootcamp"          variant="underlined"
+            v-model="selectedBootcamp"          
+            variant="underlined"
             class="selector"
         ></v-select>
 
@@ -53,7 +54,6 @@ const goToBootcamp = () => {
         </v-btn>
         </router-link>
         
-
     </v-sheet>
         
 </template>
