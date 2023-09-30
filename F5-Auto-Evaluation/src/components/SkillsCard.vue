@@ -7,7 +7,7 @@ const skills = ref ([]);
 
 const fetchSkills = async () => {
     try {
-        const response = await fetch("http://localhost:8080/");
+        const response = await fetch("http://localhost:8090/api/");
         if (response.ok) {
       skills.value = await response.json();
     }
