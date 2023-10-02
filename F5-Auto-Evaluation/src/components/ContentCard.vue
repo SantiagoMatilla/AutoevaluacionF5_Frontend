@@ -1,33 +1,34 @@
 <script setup>
-import Criteria from './Criteria.vue';
-import { ref, onMounted } from 'vue';
-import dataService from '../services/dataService';
+// import Criteria from './Criteria.vue';
+// import { ref, onMounted } from 'vue';
 
-const contents = ref([]);
-const skills = ref([]);
 
-const getContent = onMounted(async () => {
-    try {
-        const response = await dataService.getAll("contents");
-        console.log("respose:  ",response);
-        contents.value = response.data.map(content => {
-            return content;
-        });
-    } catch (error) {
-        console.error('Error fetching contents:', error);
-    }
-});
-const getSkill = onMounted(async () => {
-    try {
-        const response = await dataService.getAll("skills");
-        console.log("respose:  ",response);
-        skills.value = response.data.map(skill => {
-            return skill;
-        });
-    } catch (error) {
-        console.error('Error fetching skills:', error);
-    }
-});
+
+// const contents = ref([]);
+// const skills = ref([]);
+
+// const getContent = onMounted(async () => {
+//     try {
+//         const response = await dataService.getAll("contents");
+//         console.log("respose:  ",response);
+//         contents.value = response.data.map(content => {
+//             return content;
+//         });
+//     } catch (error) {
+//         console.error('Error fetching contents:', error);
+//     }
+// });
+// const getSkill = onMounted(async () => {
+//     try {
+//         const response = await dataService.getAll("skills");
+//         console.log("respose:  ",response);
+//         skills.value = response.data.map(skill => {
+//             return skill;
+//         });
+//     } catch (error) {
+//         console.error('Error fetching skills:', error);
+//     }
+// });
 
 </script>
 

@@ -1,15 +1,24 @@
 <script setup>
-import Service from '../services/dataService';
+import dataService from '../services/dataService';
 
-const data = Service;
+const data = dataService;
+// const stack = data.getAllStacks().stack;
 
-const stack = data.getAll().stack;
+// function chooseCoder() {
+//   const chosenCoder = document.getElementById("coderSelection").value;
+//   document.getElementById("coderName").innerHTML = chosenCoder;
+// }
 
-function chooseCoder() {
-  const chosenCoder = document.getElementById("coderSelection").value;
-  document.getElementById("coderName").innerHTML = chosenCoder;
+function getStackById(id) {
+  dataService.get(id).then((response) => {
+    console.log("prueba");
+    stack.value = response.data;
+  });
 }
 
+onBeforeMount(() => {
+  getStackById(route.params.id);
+});
 
 </script>
 
@@ -22,7 +31,9 @@ function chooseCoder() {
       <v-btn @click="chooseCoder">Evaluar</v-btn>
     </div>
     <div class="columnDiv">
-      <h1>{{ stack }}</h1>
+      <h1>
+        {{ stack.name }}
+      </h1>
     </div>
     <div class="columnDiv">
       <v-progress-circular color="white" bg-color="blue-grey-lighten-3" :size="100" :model-value="25" :width="12">
