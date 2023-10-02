@@ -1,5 +1,5 @@
-<!-- <script setup>
-  import axios from '../http-common';
+<script >
+ import axios from '../http-common';
 import { ref, onMounted } from 'vue';
   
   const skills = ref([]);
@@ -17,10 +17,15 @@ import { ref, onMounted } from 'vue';
   };
   console.log("prueba")
   onMounted(fetchSkills);
-  </script>
-  
+
+
+
+
+</script>
+
 <template>
-    <div>
+
+<div>
       <v-card class="mx-auto" max-width="344" v-for="skill in skills" :key="skill.id">
         <v-img :src="skill.photo" class="card-img-top" :alt="skill.name" height="200px" contain></v-img>
   
@@ -37,14 +42,15 @@ import { ref, onMounted } from 'vue';
       </v-card>
       <div v-for="skill in skills" :key="skill.id" >{{ skill.name }}</div>
     </div>
-  </template>
-  
-   
-  
-  <style scoped>
+
+
+</template>
+
+
+<style scoped>
   .accessButton {
     color: white;
   }
   </style>
   
-   -->
+  
