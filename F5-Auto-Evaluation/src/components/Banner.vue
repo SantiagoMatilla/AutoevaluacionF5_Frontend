@@ -1,24 +1,25 @@
 <script setup>
-import dataService from '../services/dataService';
+// import dataService from '../services/dataService';
 
-const data = dataService;
-// const stack = data.getAllStacks().stack;
 
-// function chooseCoder() {
-//   const chosenCoder = document.getElementById("coderSelection").value;
-//   document.getElementById("coderName").innerHTML = chosenCoder;
+// const data = dataService;
+// // const stack = data.getAllStacks().stack;
+
+// // function chooseCoder() {
+// //   const chosenCoder = document.getElementById("coderSelection").value;
+// //   document.getElementById("coderName").innerHTML = chosenCoder;
+// // }
+
+// function getStackById(id) {
+//   dataService.get(id).then((response) => {
+//     console.log("prueba");
+//     stack.value = response.data;
+//   });
 // }
 
-function getStackById(id) {
-  dataService.get(id).then((response) => {
-    console.log("prueba");
-    stack.value = response.data;
-  });
-}
-
-onBeforeMount(() => {
-  getStackById(route.params.id);
-});
+// onBeforeMount(() => {
+//   getStackById(route.params.id);
+// });
 
 </script>
 

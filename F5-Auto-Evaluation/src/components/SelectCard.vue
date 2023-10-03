@@ -48,7 +48,7 @@ const goToBootcamp = () => {
 
         <v-spacer></v-spacer>
         <router-link to="/">
-            <v-btn class="button" @click="goToBootcamp" to="" >
+            <v-btn class="button" :to="{name:'Evaluation'}" >
             Acceder
         </v-btn>
         </router-link>

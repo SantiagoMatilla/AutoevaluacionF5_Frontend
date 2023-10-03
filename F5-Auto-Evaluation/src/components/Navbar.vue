@@ -11,11 +11,12 @@
       <img class="logo" src="../assets/images/Logo-FF5.png" alt="Logo F5">
       </div>
       <v-spacer></v-spacer>
-      
-      <button>Nombre de Bootcamp</button>
-
+      <button>Dashboard</button>
       <v-spacer></v-spacer>
-
+      <button>Evaluar</button>
+      <v-spacer></v-spacer>
+      <button>Sección Formadores</button>
+      <v-spacer></v-spacer>
     <a href="">
       <img class="userMenu" src="../assets/images/User-menu.png" alt="User Menu">
     </a>
