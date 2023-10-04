@@ -11,11 +11,11 @@
       <img class="logo" src="../assets/images/Logo-FF5.png" alt="Logo F5">
       </div>
       <v-spacer></v-spacer>
-      <button>Dashboard</button>
+      <button  :to="{name:'Dashboard'}">Dashboard</button>
       <v-spacer></v-spacer>
-      <button>Evaluar</button>
+      <button :to="{name:'Evaluation'}">Evaluar</button>
       <v-spacer></v-spacer>
-      <button>Sección Formadores</button>
+      <button class="button" :to="{name:'Teacher'}">Sección Formadores</button>
       <v-spacer></v-spacer>
     <a href="">
       <img class="userMenu" src="../assets/images/User-menu.png" alt="User Menu">

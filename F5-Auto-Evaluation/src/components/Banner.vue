@@ -33,7 +33,7 @@
     </div>
     <div class="columnDiv">
       <h1>
-        {{ stack.name }}
+        <!-- {{ stack.name }} -->
       </h1>
     </div>
     <div class="columnDiv">
