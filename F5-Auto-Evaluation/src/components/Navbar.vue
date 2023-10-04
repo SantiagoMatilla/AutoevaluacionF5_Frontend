@@ -1,4 +1,7 @@
 <script setup>
+// import { useRouter } from 'vue-router';
+
+// const router = useRouter();
    
 </script>
 
@@ -12,9 +15,18 @@
       </div>
       <v-spacer></v-spacer>
       
-      <button>Nombre de Bootcamp</button>
+      <button>Dashboard</button>
 
       <v-spacer></v-spacer>
+      
+      <button>Evaluar</button>
+
+      <v-spacer></v-spacer>
+      <!-- <router-link to="/"> -->
+            <v-btn class="button" :to="{name:'Teacher'}" >
+              Sección Formadores
+        </v-btn>
+      <!-- </router-link> -->
 
     <a href="">
       <img class="userMenu" src="../assets/images/User-menu.png" alt="User Menu">
