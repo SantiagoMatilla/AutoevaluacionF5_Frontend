@@ -1,14 +1,33 @@
 <script setup>
-// import dataService from '../services/dataService';
+import dataService from '../services/dataService';
+import { ref, onBeforeMount } from "vue";
+import { useRoute } from "vue-router";
+
+const route = useRoute();
+const stack = ref();
+
+function getStack(id) {
+  dataService.getStackById(id).then((response) => {
+    stack.value = response.data;
+  });
+}
+
+
+function chooseCoder() {
+  const chosenCoder = document.getElementById("coderSelection").value;
+  document.getElementById("coderName").innerHTML = chosenCoder;
+}
+
+onBeforeMount(() => {
+  getStack(route.params.id);
+});
 
 
 // const data = dataService;
-// // const stack = data.getAllStacks().stack;
+// const stack = data.getAllStacks();
 
-// // function chooseCoder() {
-// //   const chosenCoder = document.getElementById("coderSelection").value;
-// //   document.getElementById("coderName").innerHTML = chosenCoder;
-// // }
+// const data = dataService;
+// // const stack = data.getAllStacks().stack;
 
 // function getStackById(id) {
 //   dataService.get(id).then((response) => {
@@ -17,9 +36,6 @@
 //   });
 // }
 
-// onBeforeMount(() => {
-//   getStackById(route.params.id);
-// });
 
 </script>
 
@@ -33,7 +49,7 @@
     </div>
     <div class="columnDiv">
       <h1>
-        <!-- {{ stack.name }} -->
+        {{ stack.name }}
       </h1>
     </div>
     <div class="columnDiv">

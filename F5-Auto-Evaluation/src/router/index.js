@@ -16,8 +16,8 @@ const router = createRouter({
     component: Bootcamp
    },
    {
-    path: '/evaluation',
-    name: 'Evaluation',
+    path: '/evaluation:id',
+    name: 'evaluation',
     component: Evaluation
    },
   //  {
