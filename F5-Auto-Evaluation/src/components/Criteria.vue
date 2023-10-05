@@ -10,10 +10,10 @@ const criteriaArray = ["Investigar", "Recordar", "Comprender", "Aplicar", "Anali
       <v-row>
         <v-col v-for="n in 7" :key="n">
           <v-item v-slot="{ isSelected, toggle }">
-            <v-card :color="isSelected ? 'success' : '#FF4702'" class="d-flex align-center" dark height="80" width="120"
+            <v-card :color="isSelected ? 'success' : '#FF4702'" class="criteriaButton d-flex align-center" dark height="8vh" width="8vw"
               @click="toggle">
               <v-scroll-y-transition>
-                <div class="text-h7  flex-grow-1 text-center">
+                <div class="criteriaText  flex-grow-1 text-center">
                   {{ isSelected ? criteriaArray[n - 1] : criteriaArray[n - 1] }}
                 </div>
               </v-scroll-y-transition>
@@ -26,4 +26,13 @@ const criteriaArray = ["Investigar", "Recordar", "Comprender", "Aplicar", "Anali
 </template>
 
 
-<style scoped></style>
+<style scoped>
+.criteriaButton {
+  width: fit-content;  
+}
+
+.criteriaText {
+  font-size: .9rem;
+}
+
+</style>
