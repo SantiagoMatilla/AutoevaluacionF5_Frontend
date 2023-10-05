@@ -2,11 +2,11 @@ import http from "../http-common";
 class DataService {
 
   getAllBootcamps() {
-    return http.get(`/bootcamps`);
+    return http.get(`/bootcamp`);
   }
   
   getBootcampById(id){
-    return http.get(`/bootcamps/${id}`);
+    return http.get(`/bootcamp/${id}`);
   }
   
   createBootcamp(data) {
@@ -18,7 +18,7 @@ class DataService {
   }
   
   deleteBootcamp(id) {
-    return http.delete(`/bootcamps/${id}`);
+    return http.delete(`/bootcamp/${id}`);
   }
 
 getAllStacks() {
