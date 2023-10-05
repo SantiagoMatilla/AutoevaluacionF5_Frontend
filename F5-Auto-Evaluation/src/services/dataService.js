@@ -1,6 +1,26 @@
 import http from "../http-common";
 class DataService {
 
+  getAllBootcamps() {
+    return http.get(`/bootcamps`);
+  }
+  
+  getBootcampById(id){
+    return http.get(`/bootcamps/${id}`);
+  }
+  
+  createBootcamp(data) {
+    return http.post(`/saveBootcamp`, data);
+  }
+  
+  updateBootcamp(id, data) {
+    return http.put(`/updateBootcamp/${id}`, data);
+  }
+  
+  deleteBootcamp(id) {
+    return http.delete(`/bootcamps/${id}`);
+  }
+
 getAllStacks() {
   return http.get(`/stacks`);
 }
@@ -62,24 +82,6 @@ deleteContent(id) {
 }
 
 
-  // getAll(path) {
-  //   return http.get(`/${path}`);
-  // }
-
-  // getOne(path, id) {
-  //   return http.get(`/${path}/${id}`);
-  // }
-
-  // createUser(path, data) {
-  //   return http.post(`/${path}`, data);
-  // }
-  // create(path, data) {
-  //   return http.post(`/${path}`, data);
-  // }
-
-  // update(path, id, data) {
-  //   return http.put(`/${path}/${id}`, data);
-  // }
 
 }
 
