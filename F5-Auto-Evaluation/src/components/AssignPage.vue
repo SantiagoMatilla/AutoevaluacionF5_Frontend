@@ -13,7 +13,8 @@
       <option v-for="bootcamp in bootcamps" :key="bootcamp.id">{{ bootcamp }}</option>
     </v-select>
     <div class="buttons_box">
-      <v-button class="buttons">Asignar coders</v-button>
+      <button class="buttons" @click="$router.push('/coders')" type="submit" name="CoderAssign" id="">Asignar coders</button>
+      <!-- <v-button class="buttons" :to="{name:'CoderAssign'}">Asignar coders</v-button> -->
       <v-button class="buttons">Editar contenido</v-button>
     </div>
    </div>
@@ -57,6 +58,8 @@ h3{
 }
 .buttons {
   background-color:white;
+  border-radius: 15px;
+
   margin : 20px;
   padding: 10px;
 }

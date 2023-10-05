@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Bootcamp from '../views/Bootcamp.vue';
 import Teacher from '../views/Teacher.vue';
 import AssignPage from '../components/AssignPage.vue';
+import Coders from '../components/Coders.vue';
 
 
 
@@ -23,6 +24,11 @@ const router = createRouter({
     path: '/assign-page',
     name: 'AssignPage',
     component: AssignPage
+  },
+  {
+    path: '/coders',
+    name: 'Coders',
+    component: Coders
   },
   ]
 })
