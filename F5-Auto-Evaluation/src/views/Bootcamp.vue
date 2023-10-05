@@ -1,5 +1,7 @@
 <script setup>
 import SelectCard from '../components/SelectCard.vue';
+import SkillsCard  from '../components/SkillsCard.vue';
+
 
 </script>
 <template>
@@ -7,6 +9,7 @@ import SelectCard from '../components/SelectCard.vue';
         <div class="select_card">
             <SelectCard />
         </div>
+        <SkillsCard />
     </div>
 </template>
 

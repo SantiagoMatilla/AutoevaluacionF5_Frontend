@@ -1,22 +1,22 @@
 <script setup>
-import { ref, onMounted } from 'vue';
+// import { ref, onMounted } from 'vue';
 
 
-const skills = ref ([]);
+// const skills = ref ([]);
 
 
-const fetchSkills = async () => {
-    try {
-        const response = await fetch("http://localhost:8080/");
-        if (response.ok) {
-      skills.value = await response.json();
-    }
-  } catch (error) {
-    console.error(error);
-  }
-};
+// const fetchSkills = async () => {
+//     try {
+//         const response = await fetch("http://localhost:8090/");
+//         if (response.ok) {
+//       skills.value = await response.json();
+//     }
+//   } catch (error) {
+//     console.error(error);
+//   }
+// };
 
-onMounted(fetchSkills);
+// onMounted(fetchSkills);
 </script>
 
 
