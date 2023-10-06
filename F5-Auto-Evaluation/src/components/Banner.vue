@@ -13,10 +13,7 @@
 // }
 
 
-// function chooseCoder() {
-//   const chosenCoder = document.getElementById("coderSelection").value;
-//   document.getElementById("coderName").innerHTML = chosenCoder;
-// }
+
 
 // onBeforeMount(() => {
 //   getStack(route.params.id);
@@ -36,7 +33,10 @@
 //   });
 // }
 
-
+function chooseCoder() {
+  const chosenCoder = document.getElementById("coderSelection").value;
+  document.getElementById("coderName").innerHTML = chosenCoder;
+}
 </script>
 
 <template>

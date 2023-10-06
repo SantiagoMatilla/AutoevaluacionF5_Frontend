@@ -1,9 +1,9 @@
 <script setup>
-import { RouterView } from 'vue-router'
-import Navbar from './components/Navbar.vue';
+// import { RouterView } from 'vue-router'
+// import Navbar from './components/Navbar.vue';
 // import ContentCard from './components/ContentCard.vue';
 // import Bootcamp from './views/Bootcamp.vue'
-// import Banner from './components/Banner.vue';
+import Banner from './components/Banner.vue';
 // import SkillsCard from './components/SkillsCard.vue';
 
 
@@ -11,11 +11,11 @@ import Navbar from './components/Navbar.vue';
 
 <template>
   <div>
-  <Navbar/>
+  <!-- <Navbar/> -->
   <!-- <Bootcamp/> -->
-  <!-- <Banner/> -->
+  <Banner/>
   <!-- <ContentCard/> -->
-  <RouterView />
+  <!-- <RouterView /> -->
   <!-- <SkillsCard/> -->
   </div>
 </template>
