@@ -4,6 +4,8 @@ defineProps ({
     type: String,
     cardColor: String, 
    } 
+
+
 })
 
 
@@ -13,8 +15,8 @@ defineProps ({
 <template>
     <div class="minicard">
       <!-- <v-card class="d-flex align-center flex-column" width="510"  style="margin-right:30px;" > -->
-        <div   style class="card ">
-          <p >{{ ProgressCard, cardColor }}</p>   
+        <div   style class="card " >
+          <p  class="text-black">{{ ProgressCard, cardColor }}</p>   
 
         </div>
         <!-- </v-card> -->

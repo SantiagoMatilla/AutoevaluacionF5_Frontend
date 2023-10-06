@@ -11,7 +11,7 @@ import ProgressCard from '@/components/ProgressCard.vue';
             <h2 style="font-size: 30px;">CO-EVALUACIONES</h2>
         </template>
 
-        <ProgressCard   :cardColor="white" :ProgressCard="'1ª Evaluación'"></ProgressCard>
+        <ProgressCard  :ProgressCard="'1ª Evaluación'"></ProgressCard>
         <ProgressCard :ProgressCard="'2ª Evaluación'"></ProgressCard>
         <ProgressCard :ProgressCard="'3ª Evaluación'"></ProgressCard>
         <ProgressCard :ProgressCard="'4ª Evaluación'"></ProgressCard>
@@ -24,11 +24,13 @@ import ProgressCard from '@/components/ProgressCard.vue';
 
 <style scoped>
 .prueba{
-    width: 50%;    
+    width: 50%; 
+ 
 }
 
 h2{
     margin: 10% 0;
+    color:rgb(250, 248, 248);
 }
 </style>
     
