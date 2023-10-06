@@ -30,6 +30,12 @@ const router = createRouter({
     name: 'Coders',
     component: Coders
   },
+  // {
+  //   path: '/evaluation',
+  //   name: 'Evaluation',
+  //   component: Evaluation
+  // },
+
   ]
 })
 

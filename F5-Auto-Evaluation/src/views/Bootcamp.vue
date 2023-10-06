@@ -1,6 +1,6 @@
 <script setup>
 import SelectCard from '../components/SelectCard.vue';
-import SkillsCard  from '../components/SkillsCard.vue';
+// import SkillsCard  from '../components/SkillsCard.vue';
 
 
 </script>
@@ -9,13 +9,13 @@ import SkillsCard  from '../components/SkillsCard.vue';
         <div class="select_card">
             <SelectCard />
         </div>
-        <SkillsCard />
+        <!-- <SkillsCard /> -->
     </div>
 </template>
 
 <style scoped>
 .background {
-    height: 90vh;
+    height: 85vh;
     margin: 0;
     padding: 0;
     background-image: url('../assets/images/fondo1.png');
@@ -25,6 +25,6 @@ import SkillsCard  from '../components/SkillsCard.vue';
 .select_card {
     position: absolute;
     margin-left: 70%;
-    margin-top: 20vh;
+    margin-top: 10%;
 }
 </style>

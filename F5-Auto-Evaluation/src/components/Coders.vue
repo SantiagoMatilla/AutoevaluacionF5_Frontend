@@ -22,8 +22,8 @@
                 <!-- <v-form @submit.prevent>
         <v-text-field
             v-model="firstName"
-            :rules="rules"
-            label="First name"
+            :rules="rules" 
+            label="First name" 
         ></v-text-field>
         <v-btn type="submit" block class="mt-2">Submit</v-btn>
         </v-form> -->
