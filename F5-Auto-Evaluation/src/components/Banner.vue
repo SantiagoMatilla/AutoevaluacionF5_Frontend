@@ -9,6 +9,7 @@ const stack = ref();
 function getStack(id) {
   stackDataService.getStackById(id).then((response) => {
     stack.value = response.data;
+    console.log("hola");
   });
 }
 
@@ -32,7 +33,7 @@ function chooseCoder() {
     </div>
     <div class="columnDiv">
       <h1>
-        <!-- {{ stack.name }} -->
+        {{ stack.name }}
       </h1>
     </div>
     <div class="columnDiv">
