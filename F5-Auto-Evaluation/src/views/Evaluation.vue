@@ -1,14 +1,14 @@
 
 <script setup>
 import Banner from '../components/Banner.vue'
-import ContentCard from '../components/ContentCard.vue'
+// import ContentCard from '../components/ContentCard.vue'
    
 </script>
 
 <template>
     <Banner />
     <!-- v-for skills -->
-    <ContentCard />
+    <!-- <ContentCard /> -->
     <!-- v-for contents -->
 </template>
 

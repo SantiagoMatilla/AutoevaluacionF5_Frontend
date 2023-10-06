@@ -1,37 +1,20 @@
 <script setup>
-// import dataService from '../services/dataService';
-// import { ref, onBeforeMount } from "vue";
-// import { useRoute } from "vue-router";
+import stackDataService from '../services/stackDataService';
+import { ref, onBeforeMount } from "vue";
+import { useRoute } from "vue-router";
 
-// const route = useRoute();
-// const stack = ref();
+const route = useRoute();
+const stack = ref();
 
-// function getStack() {
-//   dataService.getStackById().then((response) => {
-//     stack.value = response.data;
-//   });
-// }
+function getStack(id) {
+  stackDataService.getStackById(id).then((response) => {
+    stack.value = response.data;
+  });
+}
 
-
-
-
-// onBeforeMount(() => {
-//   getStack(route.params.id);
-// });
-
-
-// const data = dataService;
-// const stack = data.getAllStacks();
-
-// const data = dataService;
-// // const stack = data.getAllStacks().stack;
-
-// function getStackById(id) {
-//   dataService.get(id).then((response) => {
-//     console.log("prueba");
-//     stack.value = response.data;
-//   });
-// }
+onBeforeMount(() => {
+  getStack(route.params.id);
+});
 
 function chooseCoder() {
   const chosenCoder = document.getElementById("coderSelection").value;
