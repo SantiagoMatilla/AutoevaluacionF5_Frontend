@@ -9,7 +9,6 @@ const stack = ref();
 function getStack(id) {
   stackDataService.getStackById(id).then((response) => {
     stack.value = response.data;
-    console.log("hola");
   });
 }
 
