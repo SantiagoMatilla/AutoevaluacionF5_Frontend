@@ -1,37 +1,42 @@
  <script setup>
-  import axios from '../http-common';
-import { ref, onMounted } from 'vue';
+//  import stackDataService from '../services/stackDataService';
+// import { ref, onMounted } from 'vue';
   
-  const skills = ref([]);
+// const stack = ref([]);
+
+
+
+// const fetchStack = async () => {
+//   try {
+//     const response = await stackDataService.getAll("stack");
+//     console.log("respose:  ",response);
+//     stack.value = response.data.map(stack =>{
+//       return stack;
+//     } );
+   
+//   } catch (error) {
+//     console.error(error);
+//   }
+// };
+
+
+
+
+</script>
+
   
-  const fetchSkills = async () => {
-    try {
-      const response = await axios.get("/skills");
-    //   if (response.ok) {
-        skills.value = await response.data;
-        console.log(response.data);
-    //   }
-    } catch (error) {
-      console.error(error);
-    }
-    console.log("prueba")
-  onMounted(fetchSkills);
-  };
-  // console.log("prueba")
-  // onMounted(fetchSkills);
-  </script>
   
 <template>
     <div>
-      <v-card class="mx-auto" max-width="344" v-for="skill in skills" :key="skill.id">
-        <v-img :src="skill.photo" class="card-img-top" :alt="skill.name" height="200px" contain></v-img> 
+      <v-card class="mx-auto" max-width="344" >
+        <v-img class="card-img-top"  height="200px" contain></v-img> 
   
-        <v-card-title>{{ skill.stack }}</v-card-title>
+        <v-card-title> pepin</v-card-title>
         <v-divider :thickness="3" color="warning"></v-divider>
         <br>
-        <v-card-subtitle v-for="skill in skills"  
-  :key="skill.id">
-    uyuy{{skill }}
+        <v-card-subtitle   
+  >
+peppe
     </v-card-subtitle>  
   
         <v-card-actions>

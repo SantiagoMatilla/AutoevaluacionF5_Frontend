@@ -1,4 +1,4 @@
-<script setup >
+<script  >
   import { RouterView } from 'vue-router'
  import Navbar from './components/Navbar.vue';
 

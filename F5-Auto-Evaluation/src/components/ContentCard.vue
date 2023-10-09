@@ -1,7 +1,7 @@
 <script setup>
 import Criteria from './Criteria.vue';
 import { ref, onMounted } from 'vue';
-import dataService from '../services/dataService';
+
 
 const contents = ref([]);
 const skills = ref([]);
