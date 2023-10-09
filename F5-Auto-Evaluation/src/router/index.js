@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Bootcamp from '../views/Bootcamp.vue'
- import ProgressEvaluation from '../views/ProgressEvaluation.vue'
+ import Dashboard from '../views/Dashboard.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -13,9 +13,9 @@ const router = createRouter({
     },
 
     {
-      path: '/progress',
-       name: 'Progress',
-   component: ProgressEvaluation
+      path: '/dashboard',
+       name: 'Dashboard',
+   component: Dashboard
    },
 
   
