@@ -2,11 +2,13 @@
 import Navbar from '../components/Navbar.vue';
 import ContentCard from '../components/ContentCard.vue'
 import stackDataService from '../services/stackDataService';
+import skillDataService from '../services/skillDataService';
 import { ref, onBeforeMount } from "vue";
 import { useRoute } from "vue-router";
 
 const route = useRoute();
 const stack = ref();
+const skills = ref();
 
 function chooseCoder() {
     const chosenCoder = document.getElementById("coderSelection").value;
@@ -19,8 +21,16 @@ function getStack(id) {
     });
 }
 
+function getSkills() {
+    skillDataService.getAllSkills()
+        .then((response) => {
+            skills.value = response.data;
+        });
+}
+
 onBeforeMount(() => {
     getStack(route.params.id);
+    getSkills();
 });
 
 </script>
@@ -60,8 +70,12 @@ onBeforeMount(() => {
         </v-sheet>
     </section>
 
-
-    <ContentCard />
+    <ul>
+        <li v-for="(skill, index) in skills" :key="index">
+            <h2>{{ skill.name }}</h2>
+            <!-- <ContentCard /> -->
+        </li>
+    </ul>
 </template>
 
 <style scoped>
