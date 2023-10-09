@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Bootcamp from '../views/Bootcamp.vue'
+ import Dashboard from '../views/Dashboard.vue'
 import Evaluation from '../views/Evaluation.vue';
 // import Teacher from '../views/Teacher.vue';
 // import Dashboard from '../views/Dashboard.vue';
@@ -11,6 +12,11 @@ const router = createRouter({
   routes: [
 
    {
+
+        path: '/',
+        name: 'Bootcamp',
+     component: Bootcamp
+    },
     path: '/',
     name: 'bootcamp',
     component: Bootcamp
@@ -31,7 +37,13 @@ const router = createRouter({
   //   component: Dashboard
   //  },
 
+    {
+      path: '/dashboard',
+       name: 'Dashboard',
+   component: Dashboard
+   },
 
+  
   ]
 })
 
