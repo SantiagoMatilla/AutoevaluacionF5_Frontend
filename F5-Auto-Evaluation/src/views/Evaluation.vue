@@ -120,4 +120,8 @@ h1 {
 article {
     height: 24px;
 }
+
+h2 {
+    text-align: center;
+}
 </style>
