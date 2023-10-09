@@ -1,4 +1,3 @@
-
 <script setup>
 import Navbar from '../components/Navbar.vue';
 import ContentCard from '../components/ContentCard.vue'
@@ -8,6 +7,11 @@ import { useRoute } from "vue-router";
 
 const route = useRoute();
 const stack = ref();
+
+function chooseCoder() {
+    const chosenCoder = document.getElementById("coderSelection").value;
+    document.getElementById("coderName").innerHTML = chosenCoder;
+}
 
 function getStack(id) {
     stackDataService.getStackById(id).then((response) => {
@@ -19,10 +23,6 @@ onBeforeMount(() => {
     getStack(route.params.id);
 });
 
-function chooseCoder() {
-    const chosenCoder = document.getElementById("coderSelection").value;
-    document.getElementById("coderName").innerHTML = chosenCoder;
-}   
 </script>
 
 <template>
