@@ -1,14 +1,40 @@
 <script setup>
-import Service from '../services/dataService';
+// import dataService from '../services/dataService';
+// import { ref, onBeforeMount } from "vue";
+// import { useRoute } from "vue-router";
 
-const data = Service;
+// const route = useRoute();
+// const stack = ref();
 
-const stack = data.getAll().stack;
+// function getStack() {
+//   dataService.getStackById().then((response) => {
+//     stack.value = response.data;
+//   });
+// }
 
-function chooseCoder() {
-  const chosenCoder = document.getElementById("coderSelection").value;
-  document.getElementById("coderName").innerHTML = chosenCoder;
-}
+
+// function chooseCoder() {
+//   const chosenCoder = document.getElementById("coderSelection").value;
+//   document.getElementById("coderName").innerHTML = chosenCoder;
+// }
+
+// onBeforeMount(() => {
+//   getStack(route.params.id);
+// });
+
+
+// const data = dataService;
+// const stack = data.getAllStacks();
+
+// const data = dataService;
+// // const stack = data.getAllStacks().stack;
+
+// function getStackById(id) {
+//   dataService.get(id).then((response) => {
+//     console.log("prueba");
+//     stack.value = response.data;
+//   });
+// }
 
 
 </script>
@@ -22,7 +48,9 @@ function chooseCoder() {
       <v-btn @click="chooseCoder">Evaluar</v-btn>
     </div>
     <div class="columnDiv">
-      <h1>{{ stack }}</h1>
+      <h1>
+        <!-- {{ stack.name }} -->
+      </h1>
     </div>
     <div class="columnDiv">
       <v-progress-circular color="white" bg-color="blue-grey-lighten-3" :size="100" :model-value="25" :width="12">
