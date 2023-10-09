@@ -1,12 +1,10 @@
 <script setup>
 import { RouterView } from 'vue-router'
 
- import Navbar from './components/Navbar.vue';
+import Navbar from './components/Navbar.vue';
 // import ContentCard from './components/ContentCard.vue';
 // import Bootcamp from './views/Bootcamp.vue'
 // import Banner from '../components/Banner.vue';
-
-import Navbar from './components/Navbar.vue';
 // import ContentCard from './components/ContentCard.vue';
 // import Bootcamp from './views/Bootcamp.vue'
 // import Banner from './components/Banner.vue';
@@ -17,24 +15,16 @@ import Navbar from './components/Navbar.vue';
 
 <template>
   <body>
-     
-  <Navbar/> 
-  <!-- <SelfEvaluation/> 
+
+    <Navbar />
+    <!-- <SelfEvaluation/> 
   <CoEvaluation/> -->
-  <!-- <Bootcamp/> -->
-  <!-- <SkillsCard/> -->
-  <!-- <Banner/> -->
-  <!-- <ContentCard/> -->
-   <RouterView /> 
+    <!-- <Bootcamp/> -->
+    <!-- <SkillsCard/> -->
+    <!-- <Banner/> -->
+    <!-- <ContentCard/> -->
+    <RouterView />
   </body>
-  <div>
-  <Navbar/>
-  <!-- <Bootcamp/> -->
-  <!-- <Banner/> -->
-  <!-- <ContentCard/> -->
-  <RouterView />
-  <!-- <SkillsCard/> -->
-  </div>
 </template>
 
 <style scoped>
