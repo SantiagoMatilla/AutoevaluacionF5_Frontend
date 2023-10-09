@@ -7,6 +7,7 @@ import contentDataService from '../services/contentDataService';
 import { ref, onBeforeMount } from "vue";
 import { useRoute } from "vue-router";
 
+
 const route = useRoute();
 const stack = ref();
 const skills = ref();

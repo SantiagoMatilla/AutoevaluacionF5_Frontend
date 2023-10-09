@@ -7,7 +7,6 @@ const props = defineProps({
 </script>
 
 <template>
-    <div>
         <v-card color="#0F1523" width="64%" class="card">
             <div class="d-flex flex-no-wrap justify-space-around align-center">
                 <div class="col-md-4 mb-4">
@@ -18,7 +17,6 @@ const props = defineProps({
                 <Criteria />
             </div>
         </v-card>
-    </div>
 </template>
 
 <style scoped>
