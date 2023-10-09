@@ -3,12 +3,14 @@ import Navbar from '../components/Navbar.vue';
 import ContentCard from '../components/ContentCard.vue'
 import stackDataService from '../services/stackDataService';
 import skillDataService from '../services/skillDataService';
+import contentDataService from '../services/contentDataService';
 import { ref, onBeforeMount } from "vue";
 import { useRoute } from "vue-router";
 
 const route = useRoute();
 const stack = ref();
 const skills = ref();
+const contents = ref();
 
 function chooseCoder() {
     const chosenCoder = document.getElementById("coderSelection").value;
@@ -28,9 +30,17 @@ function getSkills() {
         });
 }
 
+function getContents() {
+    contentDataService.getAllContents()
+        .then((response) => {
+            contents.value = response.data;
+        });
+}
+
 onBeforeMount(() => {
     getStack(route.params.id);
     getSkills();
+    getContents();
 });
 
 </script>
@@ -73,7 +83,9 @@ onBeforeMount(() => {
     <ul>
         <li v-for="(skill, index) in skills" :key="index">
             <h2>{{ skill.name }}</h2>
-            <!-- <ContentCard /> -->
+            <li v-for="(content, index) in contents" :key="index">
+                <ContentCard :content="content"/>
+            </li>
         </li>
     </ul>
 </template>
