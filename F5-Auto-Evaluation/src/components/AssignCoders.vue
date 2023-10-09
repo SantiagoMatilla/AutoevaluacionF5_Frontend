@@ -1,23 +1,29 @@
 <script setup>
+const coders = ['Angela Coello', 'Nafisa Usmanova', 'Habibullah Afzali', 'Victor Tejedor', 'Santiago Matilla', 'Brian Menendez']; 
     // deleteCoder()
 </script>
 <template>
     <v-container  fluid class="container_coder">
+        <div>
+            <button class="button">
+                Atras
+            </button>
+        </div>
         <div class="content_coder">
             <h3>Nombre de bootcamp</h3>
-            <div class="new_coder_input">
+            <div class="new_coder_select">
                 <div class="h4">
                     <h4>Nuev@ coder:</h4>
                 </div>
 
-                <!--      No se alinea en Y hay que bajarlo     y no estoy seguro sobre "@submit.prevent" -->
-                <v-text-field @submit.prevent
-                v-model="Name"
-                :rules="rules"
-                label="Nombre de coder"
-                bg-color="white"
-                type="text" 
-                ></v-text-field>
+                <!--      No estoy segura sobre "@submit.prevent" v-model="coderName"-->
+                <v-select
+                    label="Nombres de coders"
+                    :items="coders"
+                    class="selector"
+                    bg-color="white"  
+                >
+                </v-select>
 
                 <!-- <v-form @submit.prevent>
         <v-text-field
@@ -29,7 +35,7 @@
         </v-form> -->
 
 
-                <v-button type="submit" class="button" size="large">
+                <v-button type="submit" class="button" >
                     Asignar
                 </v-button>
             </div>
@@ -46,10 +52,12 @@
                     </thead>
                     <tbody class="text_center">
                         <tr>
-                            <td>{{ id }}</td>
+                            <td width="2%">{{ id }}</td>
                             <td>{{ coderName }}</td>
                             <td class="accion_cell">
-                                <button @click="deleteCoder(coder.id)" class="action-button">Borrar</button>
+                                <button @click="deleteCoder(coder.id)" class="action-button">
+                                    Borrar
+                                </button>
                             </td>
                         </tr>
                     </tbody>
@@ -63,7 +71,7 @@
 <style scoped>
 .container_coder{
   background-color: #FF4702;
-  height: 100vh;
+  height: 85vh;
   padding: 5%;
   background-size: cover;
   background-repeat: no-repeat;
@@ -75,16 +83,16 @@ h3{
   justify-content: center;
   margin:1rem;
 }
-.new_coder_input {
+.new_coder_select {
     display: flex;
     flex-direction: row;
     justify-content:space-evenly;
 }
 .button {
   background-color:white;
-  border-radius: 15px;
+  border-radius: 10px;
   margin : 20px;
-  padding: 10px;
+  padding: 5px;
 }
 .h4 {
     display:flex ;

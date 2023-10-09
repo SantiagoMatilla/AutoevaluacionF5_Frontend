@@ -1,9 +1,9 @@
 <script setup>
-import AssignPage from '../components/AssignPage.vue';
+import TeacherCabinet from '../components/TeacherCabinet.vue';
    
 </script>
 <template>
-    <AssignPage />
+    <TeacherCabinet />
 </template>
 
 

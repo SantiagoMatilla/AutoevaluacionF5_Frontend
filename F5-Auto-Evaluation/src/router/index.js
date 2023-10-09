@@ -1,8 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Bootcamp from '../views/Bootcamp.vue';
 import Teacher from '../views/Teacher.vue';
-import AssignPage from '../components/AssignPage.vue';
-import Coders from '../components/Coders.vue';
+// import TeacherCabinet from '../components/TeacherCabinet.vue';
+import AssignCoders from '../components/AssignCoders.vue';
+import AssignStacks from '../components/AssignStacks.vue';
+import AssignSkills from '../components/AssignSkills.vue';
+import AssignContents from '../components/AssignContents.vue';
 
 
 
@@ -15,27 +18,46 @@ const router = createRouter({
     name: 'Bootcamp',
     component: Bootcamp
    },
-   {
-    path: '/teacher-view',
-    name: 'Teacher',
-    component: Teacher
-  },
-  {
-    path: '/assign-page',
-    name: 'AssignPage',
-    component: AssignPage
-  },
-  {
-    path: '/coders',
-    name: 'Coders',
-    component: Coders
-  },
+  //  {
+  //   path: '/dashboard',
+  //   name: 'Dashboard',
+  //   component: Dashboard
+  //  },
   // {
   //   path: '/evaluation',
   //   name: 'Evaluation',
   //   component: Evaluation
   // },
-
+   {
+    path: '/teacher-view',
+    name: 'Teacher',
+    component: Teacher
+  },
+  // {
+  //   path: '/teacher-cabinet',
+  //   name: 'TeacherCabinet',
+  //   component: TeacherCabinet
+  // },
+  {
+    path: '/assign-coders',
+    name: 'AssignCoders',
+    component: AssignCoders
+  },
+  {
+    path: '/assign-stacks',
+    name: 'AssignStacks',
+    component: AssignStacks
+  },
+  {
+    path: '/assign-skills',
+    name: 'AssignSkills',
+    component: AssignSkills
+  },
+  {
+    path: '/assign-contents',
+    name: 'AssignContents',
+    component: AssignContents
+  },
   ]
 })
 

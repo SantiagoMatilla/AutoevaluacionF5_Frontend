@@ -1,5 +1,5 @@
 <script setup>
-import SelectCard from '../components/SelectCard.vue';
+import SelectBootcamp from '../components/SelectBootcamp.vue';
 // import SkillsCard  from '../components/SkillsCard.vue';
 
 
@@ -7,7 +7,7 @@ import SelectCard from '../components/SelectCard.vue';
 <template>
     <div class="background">
         <div class="select_card">
-            <SelectCard />
+            <SelectBootcamp />
         </div>
         <!-- <SkillsCard /> -->
     </div>
