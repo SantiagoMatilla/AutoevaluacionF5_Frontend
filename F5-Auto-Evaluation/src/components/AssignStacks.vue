@@ -1,21 +1,21 @@
 <script setup>
 const stacks = ['Frontend', 'Backend', 'User UX/UI', 'Web Design']; 
-// const skills = ['Es', '', '' ]
+
     // deleteStack()
 </script>
 <template>
     <v-container  fluid class="container_stack">
         <div>
-            <button class="button">
+            <button @click="$router.push('/teacher-view')" class="back_button">
                 Atras
             </button>
         </div>
         <div class="content_stack">
-            <h3>Bootcamp {}{{ bootcamp }}</h3>
-            <div class="new_skill_select">
-                <div class="h4">
+            <h3>{Digital Academy}{{ bootcamp }}</h3>
+            <div class="new_stack_select">
+                <!-- <div class="h4">
                     <h4>Nuevo marco de competencia:</h4>
-                </div>
+                </div> -->
 
                 <!--      No estoy segura sobre "@submit.prevent" v-model="stackName"-->
                 <v-select
@@ -31,7 +31,7 @@ const stacks = ['Frontend', 'Backend', 'User UX/UI', 'Web Design'];
                 </v-button>
             </div>
 
-            <h3> Marcos de ompetencias{stacks}{{ stack }} en {bootcamp} {{ bootcamp }}</h3>
+            <h3> Marcos de competencias{{ stack }} en {Digital Academy} {{ bootcamp }}</h3>
             <div class="stacks_list">
                 <table id="stacksList">
                     <thead class="text_center">
@@ -70,29 +70,34 @@ const stacks = ['Frontend', 'Backend', 'User UX/UI', 'Web Design'];
 
 <style scoped>
 .container_stack{
-  background-color: #FF4702;
-  height: 85vh;
-  padding: 5%;
-  background-size: cover;
-  background-repeat: no-repeat;
+    background-color: #FF4702;
+    height: 85vh;
+    padding: 5%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.back_button {
+    background-color:white;
+    border-radius: 10px;
+    padding: 10px;
 }
 h3{
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin:1rem;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin:1rem;
 }
-.new_skill_select {
+.new_stack_select {
     display: flex;
     flex-direction: row;
     justify-content:space-evenly;
 }
 .button {
-  background-color:white;
-  border-radius: 10px;
-  margin : 20px;
-  padding: 10px;
+    background-color:white;
+    border-radius: 10px;
+    margin : 20px;
+    padding: 10px;
 }
 .h4 {
     display:flex ;

@@ -1,4 +1,6 @@
-<script setup></script>
+<script setup>
+// const bootcamps = ['DA', 'FEM', 'Rural Camp', 'UniqueCamp' ]
+</script>
 <template>
   <v-container fluid class="container">
     <div class="content">
@@ -45,12 +47,14 @@
   background-size: cover;
   background-repeat: no-repeat;
 }
+
 .content {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-content: center;
 }
+
 h3 {
   color: white;
   display: flex;
@@ -58,10 +62,12 @@ h3 {
   justify-content: center;
   margin: 1rem;
 }
+
 .select_bootcamp {
   width: 60%;
   margin-left: 20%;
 }
+
 .buttons_box {
   width: inherit;
   display: flex;
@@ -69,6 +75,7 @@ h3 {
   /* justify-content:center ; */
   justify-content: space-evenly;
 }
+
 .buttons {
   background-color: white;
   border-radius: 15px;
@@ -76,6 +83,7 @@ h3 {
   margin: 20px;
   padding: 10px;
 }
+
 /* .bootcamp{
   margin-top: 30%;
 

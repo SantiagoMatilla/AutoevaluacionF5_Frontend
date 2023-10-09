@@ -4,10 +4,18 @@ const coders = ['Angela Coello', 'Nafisa Usmanova', 'Habibullah Afzali', 'Victor
 </script>
 <template>
     <v-container  fluid class="container_coder">
-        <div>
-            <button class="button">
+        <div class="firstline_buttons">
+            <button @click="$router.push('/teacher-view')" class="button">
                 Atras
             </button>
+            <v-button
+                class="button"
+                @click="$router.push('/assign-stacks')"
+                type="submit"
+                name="AssignStacks"
+                >
+                Editar contenido del bootcamp
+            </v-button>
         </div>
         <div class="content_coder">
             <h3>Nombre de bootcamp</h3>
@@ -35,7 +43,7 @@ const coders = ['Angela Coello', 'Nafisa Usmanova', 'Habibullah Afzali', 'Victor
         </v-form> -->
 
 
-                <v-button type="submit" class="button" >
+                <v-button type="submit" class="button_assign" >
                     Asignar
                 </v-button>
             </div>
@@ -76,6 +84,10 @@ const coders = ['Angela Coello', 'Nafisa Usmanova', 'Habibullah Afzali', 'Victor
   background-size: cover;
   background-repeat: no-repeat;
 }
+.firstline_buttons {
+    display: flex;
+    justify-content: space-between;
+}
 h3{
   color: white;
   display: flex;
@@ -91,8 +103,14 @@ h3{
 .button {
   background-color:white;
   border-radius: 10px;
-  margin : 20px;
+  /* margin : 20px; */
   padding: 5px;
+}
+.button_assign {
+    background-color:white;
+    border-radius: 10px;
+    margin : 20px;
+    padding: 5px;
 }
 .h4 {
     display:flex ;
@@ -100,17 +118,14 @@ h3{
     color:white;
     margin: 1rem;
 }
-/* .codersList {
-    display: grid;
-    grid-gap: .8em;
-} */
+
 #codersList {
     width: 100%;
     /* border-collapse: collapse; */
 }
 #codersList th, #codersList td {
     padding: 8px;
-    text-align: left;
+    text-align: center;
     border-bottom: 1px solid #ccc;
 }
 #codersList th {
@@ -128,14 +143,6 @@ h3{
     padding: 5px 8px;
     cursor: pointer;
 }
-/* #codersList td button {
-    background-color: #FF4702;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 5px 8px; 
-    cursor: pointer;
-} */
 
 .action-button:hover {
     background-color: #E04106;

@@ -7,7 +7,7 @@ const contents = ['HTML', 'CSS', 'JS', 'SCSS'];
 <template>
     <v-container  fluid class="container_content">
         <div>
-            <button class="button">
+            <button @click="$router.push('/assign-skills')" class="back_button">
                 Atras
             </button>
         </div>
@@ -48,16 +48,10 @@ const contents = ['HTML', 'CSS', 'JS', 'SCSS'];
                             <td width="2%">{{ id }}</td>
                             <td>{{ contentName }}</td>
                             <td  width="4%">
-                                <div class="btn_row">
-                                    <!-- <button @click="updateSkill(skill.id)" class="action-button">
-                                    Editar contenido
-                                </button> -->
-
-                                <button @click="deleteContent(content.id)" class="action-button">
+                                <button 
+                                    @click="deleteContent(content.id)" class="action-button">
                                     Borrar
                                 </button>
-                                </div>
-                               
                             </td>
                         </tr>
                     </tbody>
@@ -75,6 +69,11 @@ const contents = ['HTML', 'CSS', 'JS', 'SCSS'];
   padding: 5%;
   background-size: cover;
   background-repeat: no-repeat;
+}
+.back_button {
+    background-color:white;
+    border-radius: 10px;
+    padding: 10px;
 }
 
 h3, h2{
@@ -132,10 +131,6 @@ h3, h2{
 
 .action-button:hover {
     background-color: #E04106;
-}
-.btn_row {
-    display:flex ;
-    flex-direction: row;
 }
 
 </style>

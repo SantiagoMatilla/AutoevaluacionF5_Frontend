@@ -4,12 +4,14 @@ const skills = ['Es capaz de x', 'Es capaz de y', 'Es competente en N' ]
     // deleteSkill()
 </script>
 <template>
-    <v-container  fluid class="container_stack">
-        <div>
-            <button class="button" id="back_button">
+    <v-container  fluid class="container">
+        <div class="title_n_backbtn">
+            <button @click="$router.push('/assign-stacks')" class="back_button">
                 Atras
             </button>
-            <h2>(Nombre de bootcamp) Digital Academy - Asturias <br>(Marco de competencia) Frontend{{ stack }}</h2>
+            <div>
+                <h2>(Nombre de bootcamp) Digital Academy - Asturias <br>(Marco de competencia) Frontend{{ stack }}</h2>
+            </div>
         </div>
         <div class="content_stack">
             <h3>Agrega las competencias al {Frontend}{{ stack }}</h3>
@@ -51,11 +53,12 @@ const skills = ['Es capaz de x', 'Es capaz de y', 'Es competente en N' ]
                                     <button  
                                         @click="$router.push('/assign-contents')"  class="action-button">
                                     Editar 
-                                </button>
+                                    </button>
 
-                                <button @click="deleteSkill(skill.id)" class="action-button">
-                                    Borrar
-                                </button>
+                                    <button 
+                                        @click="deleteSkill(skill.id)" class="action-button">
+                                        Borrar
+                                    </button>
                                 </div>
                                
                             </td>
@@ -69,18 +72,20 @@ const skills = ['Es capaz de x', 'Es capaz de y', 'Es competente en N' ]
 
 
 <style scoped>
-.container_stack{
+.container {
   background-color: #FF4702;
   height: 85vh;
   padding: 5%;
   background-size: cover;
   background-repeat: no-repeat;
 }
-#back_button{
-    position: absolute;
-    margin: 0;
+
+.back_button {
+    background-color:white;
+    border-radius: 10px;
+    padding: 10px;
 }
-h3, h2{
+h3, h2 {
   color: white;
   display: flex;
   align-items: center;
@@ -128,7 +133,6 @@ h3, h2{
     margin:5px;
     cursor: pointer;
 }
-
 .action-button:hover {
     background-color: #E04106;
 }
