@@ -84,9 +84,13 @@ onBeforeMount(() => {
     <ul>
         <li v-for="(skill, index) in skills" :key="index">
             <h2>{{ skill.name }}</h2>
-            <li v-for="(content, index) in contents" :key="index">
-                <ContentCard :content="content"/>
-            </li>
+            <ul>
+                <template v-for="(content, index) in contents" :key="index">
+                    <li v-if="skill.id == contents[index].skill.id">                       
+                        <ContentCard :content="content" />
+                    </li>
+                </template>
+            </ul>
         </li>
     </ul>
 </template>
