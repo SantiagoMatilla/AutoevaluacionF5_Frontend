@@ -1,7 +1,7 @@
 <script setup>
 import { RouterView } from 'vue-router'
-
 import Navbar from './components/Navbar.vue';
+
 // import ContentCard from './components/ContentCard.vue';
 // import Bootcamp from './views/Bootcamp.vue'
 // import Banner from '../components/Banner.vue';
@@ -14,17 +14,14 @@ import Navbar from './components/Navbar.vue';
 </script>
 
 <template>
+
   <body>
 
     <Navbar />
-    <!-- <SelfEvaluation/> 
-  <CoEvaluation/> -->
-    <!-- <Bootcamp/> -->
-    <!-- <SkillsCard/> -->
-    <!-- <Banner/> -->
-    <!-- <ContentCard/> -->
+
     <RouterView />
   </body>
+
 </template>
 
 <style scoped>
