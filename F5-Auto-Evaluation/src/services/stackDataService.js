@@ -2,11 +2,11 @@ import http from "../http-common";
 class stackDataService {
 
     getAllStacks() {
-        return http.get(`/stack`);
+        return http.get(`/stacks`);
     }
 
     getStackById(id) {
-        return http.get(`/stack/${id}`);
+        return http.get(`/stacks/${id}`);
     }
 
     createStack(data) {
@@ -18,7 +18,7 @@ class stackDataService {
     }
 
     deleteStack(id) {
-        return http.delete(`/deleteStack/${id}`);
+        return http.delete(`/stacks/${id}`);
     }
 }
 

@@ -1,31 +1,8 @@
-<<<<<<< HEAD
-<script  >
-  import { RouterView } from 'vue-router'
- import Navbar from './components/Navbar.vue';
 
 
 
 
 
-
-
-
-
-
-
-
-</script>
-
-<template>
-  <div>
-    
-   <Navbar/> 
- 
-  
-   
-    <RouterView />  
-  </div>
-=======
 <script setup>
 import { RouterView } from 'vue-router'
 
@@ -53,7 +30,7 @@ import Navbar from './components/Navbar.vue';
     <!-- <ContentCard/> -->
     <RouterView />
   </body>
->>>>>>> df494184c1f3aa5663d80006f85094ccbd45c60f
+
 </template>
 
 <style scoped>
