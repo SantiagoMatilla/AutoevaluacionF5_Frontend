@@ -1,10 +1,10 @@
 <script setup>
-import { ref } from "vue";
 // import { useRouter } from "vue-router";
+// const router = useRouter();
+import { ref } from "vue";
 
 const bootcamps = ['DA', 'FEM', 'Unique', 'Rural Camp']; 
 const selectedBootcamp = ref(null) ;
-// const router = useRouter();
 
 const goToBootcamp = () => {
 
@@ -70,9 +70,6 @@ const goToBootcamp = () => {
     flex-direction: column;
     justify-content: center;
     align-items:center;
-}
-.card {
-    
 }
 .selector {
     width:80% ;
