@@ -52,6 +52,7 @@ export default {
       </v-window>
     </v-card-text>
   </v-card>
+  <p class="forgotPassword">¿Olvidaste tu contraseña?</p>
 </template>
 
 <style scoped>
@@ -78,4 +79,9 @@ h3 {
   background-color: var(--primaryColor);
   /* background-color: var(--secondaryColor); */
 }
+
+.forgotPassword {
+  text-align: center;
+}
+
 </style>
