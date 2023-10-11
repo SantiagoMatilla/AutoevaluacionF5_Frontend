@@ -2,22 +2,24 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Bootcamp from '../views/Bootcamp.vue';
 import Teacher from '../views/Teacher.vue';
 // import TeacherCabinet from '../components/TeacherCabinet.vue';
-import AssignCoders from '../components/AssignCoders.vue';
-import AssignStacks from '../components/AssignStacks.vue';
-import AssignSkills from '../components/AssignSkills.vue';
-import AssignContents from '../components/AssignContents.vue';
+import AssignCoders from '../components/TeacherFolder/AssignCoders.vue';
+import AssignStacks from '../components/TeacherFolder/AssignStacks.vue';
+import AssignSkills from '../components/TeacherFolder/AssignSkills.vue';
+import AssignContents from '../components/TeacherFolder/AssignContents.vue';
+
 
 
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
-  routes: [
+    routes: [
 
    {
     path: '/',
     name: 'Bootcamp',
     component: Bootcamp
    },
+   
   //  {
   //   path: '/dashboard',
   //   name: 'Dashboard',
@@ -58,6 +60,7 @@ const router = createRouter({
     name: 'AssignContents',
     component: AssignContents
   },
+  
   ]
 })
 

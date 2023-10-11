@@ -71,9 +71,9 @@ const goToBootcamp = () => {
     justify-content: center;
     align-items:center;
 }
-.card {
+/* .card {
     
-}
+} */
 .selector {
     width:80% ;
     margin: 10px;
