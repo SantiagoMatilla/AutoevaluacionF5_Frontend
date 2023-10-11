@@ -1,15 +1,12 @@
 <script setup>
 import SelectBootcamp from '../components/SelectBootcamp.vue';
-// import SkillsCard  from '../components/SkillsCard.vue';
-
-
 </script>
+
 <template>
     <div class="background">
         <div class="select_card">
             <SelectBootcamp />
         </div>
-        <!-- <SkillsCard /> -->
     </div>
 </template>
 
