@@ -8,7 +8,7 @@ export default {
 
 <template>
   <v-card class="loginCard">
-    <h3>¡Bienvenid@s!</h3>
+    <h3>¡Bienvenid@!</h3>
     <v-tabs v-model="tab" bg-color="#FF4702">
       <v-tab class="tab" value="login">Login</v-tab>
       <v-tab class="tab" value="register">Registro</v-tab>

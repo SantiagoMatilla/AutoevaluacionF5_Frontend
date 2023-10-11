@@ -23,7 +23,7 @@ const goToBootcamp = () => {
         :height="400" :width="300" border color=#FF4702 rounded class="card">
 
         <div>
-            <h3>¡Bienvenid@s!</h3>
+            <h3>¡Bienvenid@!</h3>
         </div>
 
         <div>
