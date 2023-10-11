@@ -1,18 +1,21 @@
 <script setup>
-import SelectCard from '../components/SelectCard.vue';
+import SelectBootcamp from '../components/SelectBootcamp.vue';
+// import SkillsCard  from '../components/SkillsCard.vue';
+
 
 </script>
 <template>
     <div class="background">
         <div class="select_card">
-            <SelectCard />
+            <SelectBootcamp />
         </div>
+        <!-- <SkillsCard /> -->
     </div>
 </template>
 
 <style scoped>
 .background {
-    height: 90vh;
+    height: 85vh;
     margin: 0;
     padding: 0;
     background-image: url('../assets/images/fondo1.png');
@@ -22,6 +25,6 @@ import SelectCard from '../components/SelectCard.vue';
 .select_card {
     position: absolute;
     margin-left: 70%;
-    margin-top: 20vh;
+    margin-top: 10%;
 }
 </style>
