@@ -1,6 +1,6 @@
 <script setup>
 // import SelectBootcamp from '../components/SelectBootcamp.vue';
-import Login from '../components/Login.vue';
+import Login from './Login.vue';
 
 </script>
 

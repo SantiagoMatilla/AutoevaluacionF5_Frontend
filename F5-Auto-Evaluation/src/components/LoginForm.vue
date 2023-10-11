@@ -8,8 +8,9 @@ export default {
 
 <template>
   <v-card class="loginCard">
-    <h3>¡Bienvenid@!</h3>
-    <v-tabs v-model="tab" bg-color="#FF4702">
+
+    <h3>Bienvenid@ a tu autoevaluación</h3>
+    <v-tabs class="tabsContainer" v-model="tab" bg-color="#FF4702" color="white" fixed-tabs>
       <v-tab class="tab" value="login">Login</v-tab>
       <v-tab class="tab" value="register">Registro</v-tab>
     </v-tabs>
@@ -56,18 +57,22 @@ export default {
 </template>
 
 <style scoped>
-
 h3 {
   text-align: center;
 }
+
+.tabsContainer {
+  color: lightgrey !important;
+}
+
 .loginCard {
   width: 240px;
   margin: auto;
 }
 
-.tab {
+/* .tab {
   width: 50%;
-}
+} */
 
 .buttonContainer {
   display: flex;
@@ -83,5 +88,4 @@ h3 {
 .forgotPassword {
   text-align: center;
 }
-
 </style>
