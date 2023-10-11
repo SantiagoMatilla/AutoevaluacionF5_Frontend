@@ -17,8 +17,13 @@ class bootcampDataService {
         return http.put(`/updateBootcamp/${id}`, data);
     }
 
+<<<<<<< HEAD
     deleteBootamp(id) {
         return http.delete(`/deleteBootamp/${id}`);
+=======
+    deleteBootcamp(id) {
+        return http.delete(`/deleteBootcamp/${id}`);
+>>>>>>> d9c3998eba62bcb0d10d40b79d93b273d992cfb1
     }
 }
 
