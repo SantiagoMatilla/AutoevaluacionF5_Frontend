@@ -97,7 +97,8 @@ h3 {
 .loginForm {
   display: flex;
   flex-direction: column;
-  gap: 58px;
+  margin-top: 24px;
+  gap: 34px;
 }
 
 .loginContainer {
