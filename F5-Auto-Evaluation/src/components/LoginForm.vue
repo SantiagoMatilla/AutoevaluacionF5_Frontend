@@ -9,7 +9,7 @@ export default {
 <template>
   <section>
     <img class="logo" src="../assets/images/Logo-FF5.png" alt="">
-    
+
     <h3>Bienvenid@ a tu autoevaluación</h3>
 
     <v-card class="loginCard">
@@ -45,10 +45,12 @@ export default {
                 </div>
                 <div class="registrationSection">
                   <v-text-field class="registrationInput" label="Email" variant="underlined" type="email"></v-text-field>
-                  <v-text-field class="registrationInput" label="Contraseña" variant="underlined" type="password"></v-text-field>
+                  <v-text-field class="registrationInput" label="Contraseña" variant="underlined"
+                    type="password"></v-text-field>
                 </div>
                 <div class="registrationSection">
-                  <v-text-field class="registrationInput" label="Confirmar contraseña" variant="underlined" type="password"></v-text-field>
+                  <v-text-field class="registrationInput" label="Confirmar contraseña" variant="underlined"
+                    type="password"></v-text-field>
                 </div>
               </div>
               <div class="buttonContainer">
@@ -77,6 +79,7 @@ section {
 
 .logo {
   height: 12%;
+  margin-top: 6vh;
 }
 
 h3 {
@@ -85,13 +88,14 @@ h3 {
 }
 
 .tabsContainer {
-  color: lightgrey !important;
+  color: lightgray !important;
 }
 
 .loginCard {
   width: 80%;
   height: 400px;
   margin: auto;
+  background-color: #ECEFF1;
 }
 
 .loginForm {
@@ -117,10 +121,6 @@ h3 {
   gap: 10%;
 }
 
-/* .tab {
-  width: 50%;
-} */
-
 .buttonContainer {
   display: flex;
   justify-content: center;
@@ -129,13 +129,9 @@ h3 {
 .button {
   color: white;
   background-color: var(--primaryColor);
-  /* background-color: var(--secondaryColor); */
 }
 
 .forgotPassword {
   text-align: center;
 }
-
-
-
 </style>
