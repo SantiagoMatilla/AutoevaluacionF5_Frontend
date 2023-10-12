@@ -50,7 +50,7 @@ onBeforeMount(() => {
     <Navbar />
     <section class="banner">
         <div class="columnDiv" id="coderDiv">
-            <v-select id="coderSelection" label="Coder" :items="['Diego Córdoba', 'Manuela Grajales', 'María Villaverde']"
+            <v-select class="coderSelection" label="Coder" :items="['Diego Córdoba', 'Manuela Grajales', 'María Villaverde']"
                 bg-color="white" density="compact">
             </v-select>
             <v-btn @click="chooseCoder">Evaluar</v-btn>
@@ -140,5 +140,9 @@ article {
 
 h2 {
     text-align: center;
+}
+
+.coderSelection {
+    width: 200px
 }
 </style>

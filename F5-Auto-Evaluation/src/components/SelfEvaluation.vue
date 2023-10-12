@@ -11,7 +11,7 @@ import ProgressCard from '@/components/ProgressCard.vue';
             <h2 style="font-size: 30px;">AUTOEVALUACIONES</h2>
         </template>
 
-        <ProgressCard :ProgressCard="'1ª Evaluación'" ></ProgressCard>
+        <ProgressCard :ProgressCard="'1ª Evaluación'" :cardColor="green"></ProgressCard>
         <ProgressCard :ProgressCard="'2ª Evaluación'"></ProgressCard>
         <ProgressCard :ProgressCard="'3ª Evaluación'"></ProgressCard>
         <ProgressCard :ProgressCard="'4ª Evaluación'"></ProgressCard>
