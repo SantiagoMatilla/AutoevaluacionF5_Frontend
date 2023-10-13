@@ -34,8 +34,9 @@ import Navbar from './components/Navbar.vue';
 </template>
 
 <style scoped>
-body {
+ body {
   width: 100vw;
   height: 100vh;
-}
+ 
+} 
 </style>
