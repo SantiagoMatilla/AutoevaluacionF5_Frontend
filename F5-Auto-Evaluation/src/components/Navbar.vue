@@ -8,18 +8,6 @@
       <img class="logo" src="../assets/images/Logo-FF5.png" alt="Logo F5">
     </div>
     <v-spacer></v-spacer>
-
-    <button>Dashboard</button>
-
-    <v-spacer></v-spacer>
-
-    <button>Evaluar</button>
-
-    <v-spacer></v-spacer>
-    <v-btn class="button" :to="{ name: 'Teacher' }">
-      Sección Formadores
-    </v-btn>
-
     <button :to="{ name: 'Dashboard' }">Dashboard</button>
     <v-spacer></v-spacer>
     <button :to="{ name: 'Stack' }">Evaluar</button>

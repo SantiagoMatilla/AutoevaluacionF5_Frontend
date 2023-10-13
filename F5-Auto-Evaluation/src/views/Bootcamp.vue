@@ -1,21 +1,21 @@
 <script setup>
-import SelectBootcamp from '../components/SelectBootcamp.vue';
-// import SkillsCard  from '../components/SkillsCard.vue';
-
+// import SelectBootcamp from '../components/SelectBootcamp.vue';
+import Login from './Login.vue';
 
 </script>
+
 <template>
-    <div class="background">
+    <!-- <div class="background">
         <div class="select_card">
             <SelectBootcamp />
         </div>
-        <!-- <SkillsCard /> -->
-    </div>
+    </div> -->
+    <Login />
 </template>
 
 <style scoped>
-.background {
-    height: 85vh;
+/* .background {
+    height: 100vh;
     margin: 0;
     padding: 0;
     background-image: url('../assets/images/fondo1.png');
@@ -26,5 +26,5 @@ import SelectBootcamp from '../components/SelectBootcamp.vue';
     position: absolute;
     margin-left: 70%;
     margin-top: 10%;
-}
+} */
 </style>
