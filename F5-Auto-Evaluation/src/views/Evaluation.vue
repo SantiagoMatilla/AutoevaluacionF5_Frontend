@@ -147,10 +147,6 @@ h2 {
     text-align: center;
 }
 
-
-</style>
-
-
 .coderSelection {
     width: 200px
 }
