@@ -1,3 +1,6 @@
+ 
+
+
 
 <script setup>
 import Navbar from '../components/Navbar.vue';
@@ -144,7 +147,12 @@ h2 {
     text-align: center;
 }
 
+
+</style>
+
+
 .coderSelection {
     width: 200px
 }
 </style>
+

@@ -1,8 +1,10 @@
 <script setup>
 import Criteria from './Criteria.vue';
 
+
 const props = defineProps({
     content: Object,
+
 });
 </script>
 
