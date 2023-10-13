@@ -1,25 +1,24 @@
 import http from "../http-common";
 class contentDataService {
+  getAllContents() {
+    return http.get(`/contents`);
+  }
 
-    getAllContents() {
-        return http.get(`/content`);
-    }
+  getContentById(id) {
+    return http.get(`/content/${id}`);
+  }
 
-    getContentById(id) {
-        return http.get(`/content/${id}`);
-    }
+  createContent(data) {
+    return http.post(`/saveContent`, data);
+  }
 
-    createContent(data) {
-        return http.post(`/saveContent`, data);
-    }
+  updateContent(id, data) {
+    return http.put(`/updateContent/${id}`, data);
+  }
 
-    updateContent(id, data) {
-        return http.put(`/updateContent/${id}`, data);
-    }
-
-    deleteContent(id) {
-        return http.delete(`/deleteContent/${id}`);
-    }
+  deleteContent(id) {
+    return http.delete(`/deleteContent/${id}`);
+  }
 }
 
 export default new contentDataService();
