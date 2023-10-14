@@ -1,8 +1,10 @@
 <script setup>
+import Navbar from '../components/Navbar.vue';
 const contents = ['HTML', 'CSS', 'JS', 'SCSS'];
 </script>
 
 <template>
+    <Navbar />
     <v-container fluid class="container_content">
         <div>
             <button @click="$router.push('/assign-skills')" class="back_button">
@@ -10,18 +12,16 @@ const contents = ['HTML', 'CSS', 'JS', 'SCSS'];
             </button>
         </div>
         <div class="content_stack">
-            <h2>(Nombre de bootcamp) Digital Academy - Asturias <br>(Marco de competencia) Frontend{{ stack }}</h2>
-            <h3>Es capaz de x{}{{ skill }}</h3>
+            <h2>Digital Academy Asturias </h2>
+            <h3>Es capaz de x</h3>
             <div class="new_content_select">
-                <v-select label="Contenido" :items="contents" class="selector" bg-color="white">
+                <v-select label="Nuevo contenido" :items="contents" class="selector" bg-color="white">
                 </v-select>
 
                 <v-button type="submit" class="button">
                     Añadir
                 </v-button>
             </div>
-
-            <h3> Contenidos {{ content }} en Es capaz de x {{ skill }}</h3>
             <div class="contents_list">
                 <table id="contentsList">
                     <thead class="text_center">
@@ -64,8 +64,7 @@ const contents = ['HTML', 'CSS', 'JS', 'SCSS'];
     padding: 10px;
 }
 
-h3,
-h2 {
+h2, h3 {
     color: white;
     display: flex;
     align-items: center;
@@ -125,5 +124,10 @@ h2 {
 
 .action-button:hover {
     background-color: #E04106;
+}
+
+.new_content_select {
+    width: 50%;
+    margin: auto;
 }
 </style>

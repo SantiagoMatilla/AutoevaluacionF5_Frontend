@@ -19,7 +19,7 @@ onBeforeMount(() => {
 <template>
   <v-container fluid class="container">
     <div class="content">
-      <h3>Selecciona el bootcamp a editar</h3>
+      <h2>Selecciona el bootcamp a editar</h2>
       <v-select bg-color="white" label="Nombre de bootcamp" v-model="selectedBootcamp" class="select_bootcamp">
         <option v-for="bootcamp in bootcamps" :key="bootcamp.id">
           {{ bootcamp }}
@@ -47,13 +47,16 @@ onBeforeMount(() => {
 }
 
 .content {
+  width: 60%;
+  margin: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-content: center;
+  gap: 4vh;
 }
 
-h3 {
+h2 {
   color: white;
   display: flex;
   align-items: center;
@@ -71,6 +74,7 @@ h3 {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  margin: auto;
 }
 
 .buttons {

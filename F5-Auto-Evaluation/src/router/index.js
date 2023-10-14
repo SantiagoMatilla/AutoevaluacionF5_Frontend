@@ -4,6 +4,10 @@ import Dashboard from "../views/Dashboard.vue";
 import Stacks from "../views/Stacks.vue"
 import Evaluation from "../views/Evaluation.vue";
 import Teacher from "../views/Teacher.vue";
+import AssignCoders from "../views/AssignCoders.vue"
+import AssignContents from "../views/AssignContents.vue"
+import AssignSkills from "../views/AssignSkills.vue"
+import AssignStacks from "../views/AssignStacks.vue"
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -36,6 +40,36 @@ const router = createRouter({
       path: "/teacher",
       name: "Teacher",
       component: Teacher,
+    },
+
+    {
+      path: "/teacher",
+      name: "Teacher",
+      component: Teacher,
+    },
+
+    {
+      path: "/assign-coders",
+      name: "AssignCoders",
+      component: AssignCoders,
+    },
+
+    {
+      path: "/assign-contents",
+      name: "AssignContents",
+      component: AssignContents,
+    },
+
+    {
+      path: "/assign-skills",
+      name: "AssignSkills",
+      component: AssignSkills,
+    },
+
+    {
+      path: "/assign-stacks",
+      name: "AssignStacks",
+      component: AssignStacks,
     },
   ],
 });

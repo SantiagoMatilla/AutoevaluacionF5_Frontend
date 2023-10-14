@@ -24,7 +24,6 @@ function getStack(id) {
     });
 }
 
-
 function getSkills() {
     skillDataService.getAllSkills()
         .then((response) => {

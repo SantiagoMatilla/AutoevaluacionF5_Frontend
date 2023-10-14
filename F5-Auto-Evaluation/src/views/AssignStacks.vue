@@ -1,49 +1,45 @@
 <script setup>
-const stack = ['Frontend', 'Backend', 'User UX/UI', 'Web Design'];
-const skills = ['Es capaz de x', 'Es capaz de y', 'Es competente en N']
+import Navbar from '../components/Navbar.vue';
+const stacks = ['Frontend', 'Backend', 'User UX/UI', 'Web Design']; 
 </script>
 
 <template>
-    <v-container fluid class="container">
-        <div class="title_n_backbtn">
-            <button @click="$router.push('/assign-stacks')" class="back_button">
+    <Navbar />
+    <v-container fluid class="container_stack">
+        <div>
+            <button @click="$router.push('/teacher')" class="back_button">
                 Atras
             </button>
-            <div>
-                <h2>(Nombre de bootcamp) Digital Academy - Asturias <br>(Marco de competencia) Frontend{{ stack }}</h2>
-            </div>
         </div>
         <div class="content_stack">
-            <h3>Agrega las competencias al {Frontend}{{ stack }}</h3>
-            <div class="new_skill_select">
-                <v-select label="Competencia" :items="skills" class="selector" bg-color="white">
+            <h2>Digital Academy Asturias</h2>
+            <div class="new_stack_select">
+                <v-select label="Nuevo marco de competencias" :items="stacks" class="selector" bg-color="white">
                 </v-select>
                 <v-button type="submit" class="button">
                     Añadir
                 </v-button>
             </div>
-
-            <h3> Competencias {{ skill }} en {Frontend} {{ stack }}</h3>
-            <div class="skills_list">
-                <table id="skillsList">
+            <div class="stacks_list">
+                <table id="stacksList">
                     <thead class="text_center">
                         <tr>
                             <th>#</th>
-                            <th>Competencia</th>
+                            <th>Marcos de competencias</th>
                             <th>Acciones</th>
                         </tr>
                     </thead>
                     <tbody class="text_center">
                         <tr>
                             <td width="2%">{{ id }}</td>
-                            <td>{{ skillName }}</td>
+                            <td>{{ stackName }}</td>
                             <td width="4%">
                                 <div class="btn_row">
-                                    <button @click="$router.push('/assign-contents')" class="action-button">
+                                    <button @click="$router.push('/assign-skills')" class="action-button">
                                         Editar
                                     </button>
 
-                                    <button @click="deleteSkill(skill.id)" class="action-button">
+                                    <button @click="deleteStack(stack.id)" class="action-button">
                                         Borrar
                                     </button>
                                 </div>
@@ -59,7 +55,7 @@ const skills = ['Es capaz de x', 'Es capaz de y', 'Es competente en N']
 
 
 <style scoped>
-.container {
+.container_stack {
     background-color: #FF4702;
     height: 85vh;
     padding: 5%;
@@ -73,7 +69,6 @@ const skills = ['Es capaz de x', 'Es capaz de y', 'Es competente en N']
     padding: 10px;
 }
 
-h3,
 h2 {
     color: white;
     display: flex;
@@ -82,7 +77,7 @@ h2 {
     margin: 1rem;
 }
 
-.new_skill_select {
+.new_stack_select {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -102,23 +97,23 @@ h2 {
     margin: 1rem;
 }
 
-#skillsList {
+#stacksList {
     width: 100%;
 }
 
-#skillsList th,
-#skillsList td {
+#stacksList th,
+#stacksList td {
     padding: 8px;
-    text-align: center;
+    text-align: left;
     border-bottom: 1px solid #ccc;
 }
 
-#skillsList th {
+#stacksList th {
     background-color: white;
     color: #FF4702;
 }
 
-#skillsList tbody tr:nth-child(odd) {
+#stacksList tbody tr:nth-child(odd) {
     background-color: #f2f2f2;
 }
 
@@ -140,4 +135,10 @@ h2 {
     display: flex;
     flex-direction: row;
 }
+
+.new_stack_select {
+    width: 50%;
+    margin: auto;
+}
+
 </style>

@@ -1,28 +1,32 @@
 <script setup>
-const stacks = ['Frontend', 'Backend', 'User UX/UI', 'Web Design']; 
+import Navbar from '../components/Navbar.vue';
+const stack = ['Frontend', 'Backend', 'User UX/UI', 'Web Design'];
+const skills = ['Es capaz de x', 'Es capaz de y', 'Es competente en N']
 </script>
 
 <template>
-    <v-container fluid class="container_stack">
-        <div>
-            <button @click="$router.push('/teacher-view')" class="back_button">
+    <Navbar />
+    <v-container fluid class="container">
+        <div class="title_n_backbtn">
+            <button @click="$router.push('/assign-stacks')" class="back_button">
                 Atras
             </button>
+            <div>
+                <h2>Digital Academy Asturias</h2>
+                <h3>Front End</h3>
+            </div>
         </div>
         <div class="content_stack">
-            <h3>{Digital Academy}{{ bootcamp }}</h3>
-            <div class="new_stack_select">
-                <v-select label="Competencia" :items="stacks" class="selector" bg-color="white">
+            <div class="new_skill_select">
+                <v-select label="Nueva competencia" :items="skills" class="selector" bg-color="white">
                 </v-select>
-
                 <v-button type="submit" class="button">
                     Añadir
                 </v-button>
             </div>
 
-            <h3> Marcos de competencias{{ stack }} en {Digital Academy} {{ bootcamp }}</h3>
-            <div class="stacks_list">
-                <table id="stacksList">
+            <div class="skills_list">
+                <table id="skillsList">
                     <thead class="text_center">
                         <tr>
                             <th>#</th>
@@ -33,14 +37,14 @@ const stacks = ['Frontend', 'Backend', 'User UX/UI', 'Web Design'];
                     <tbody class="text_center">
                         <tr>
                             <td width="2%">{{ id }}</td>
-                            <td>{{ stackName }}</td>
+                            <td>{{ skillName }}</td>
                             <td width="4%">
                                 <div class="btn_row">
-                                    <button @click="$router.push('/assign-skills')" class="action-button">
+                                    <button @click="$router.push('/assign-contents')" class="action-button">
                                         Editar
                                     </button>
 
-                                    <button @click="deleteStack(stack.id)" class="action-button">
+                                    <button @click="deleteSkill(skill.id)" class="action-button">
                                         Borrar
                                     </button>
                                 </div>
@@ -56,7 +60,7 @@ const stacks = ['Frontend', 'Backend', 'User UX/UI', 'Web Design'];
 
 
 <style scoped>
-.container_stack {
+.container {
     background-color: #FF4702;
     height: 85vh;
     padding: 5%;
@@ -70,7 +74,8 @@ const stacks = ['Frontend', 'Backend', 'User UX/UI', 'Web Design'];
     padding: 10px;
 }
 
-h3 {
+h3,
+h2 {
     color: white;
     display: flex;
     align-items: center;
@@ -78,7 +83,7 @@ h3 {
     margin: 1rem;
 }
 
-.new_stack_select {
+.new_skill_select {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -98,27 +103,23 @@ h3 {
     margin: 1rem;
 }
 
-/* .stacksList {
-    display: grid;
-    grid-gap: .8em;
-} */
-#stacksList {
+#skillsList {
     width: 100%;
 }
 
-#stacksList th,
-#stacksList td {
+#skillsList th,
+#skillsList td {
     padding: 8px;
-    text-align: left;
+    text-align: center;
     border-bottom: 1px solid #ccc;
 }
 
-#stacksList th {
+#skillsList th {
     background-color: white;
     color: #FF4702;
 }
 
-#stacksList tbody tr:nth-child(odd) {
+#skillsList tbody tr:nth-child(odd) {
     background-color: #f2f2f2;
 }
 
@@ -139,5 +140,10 @@ h3 {
 .btn_row {
     display: flex;
     flex-direction: row;
+}
+
+.new_skill_select {
+    width: 50%;
+    margin: auto;
 }
 </style>
