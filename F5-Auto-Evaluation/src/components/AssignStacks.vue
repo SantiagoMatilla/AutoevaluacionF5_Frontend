@@ -1,10 +1,9 @@
 <script setup>
 const stacks = ['Frontend', 'Backend', 'User UX/UI', 'Web Design']; 
-
-    // deleteStack()
 </script>
+
 <template>
-    <v-container  fluid class="container_stack">
+    <v-container fluid class="container_stack">
         <div>
             <button @click="$router.push('/teacher-view')" class="back_button">
                 Atras
@@ -13,20 +12,10 @@ const stacks = ['Frontend', 'Backend', 'User UX/UI', 'Web Design'];
         <div class="content_stack">
             <h3>{Digital Academy}{{ bootcamp }}</h3>
             <div class="new_stack_select">
-                <!-- <div class="h4">
-                    <h4>Nuevo marco de competencia:</h4>
-                </div> -->
-
-                <!--      No estoy segura sobre "@submit.prevent" v-model="stackName"-->
-                <v-select
-                    label="Competencia"
-                    :items="stacks"
-                    class="selector"
-                    bg-color="white"  
-                >
+                <v-select label="Competencia" :items="stacks" class="selector" bg-color="white">
                 </v-select>
 
-                <v-button type="submit" class="button" >
+                <v-button type="submit" class="button">
                     Añadir
                 </v-button>
             </div>
@@ -45,19 +34,17 @@ const stacks = ['Frontend', 'Backend', 'User UX/UI', 'Web Design'];
                         <tr>
                             <td width="2%">{{ id }}</td>
                             <td>{{ stackName }}</td>
-                            <td  width="4%">
+                            <td width="4%">
                                 <div class="btn_row">
-                                    <button 
-                                        @click="$router.push('/assign-skills')" class="action-button">
+                                    <button @click="$router.push('/assign-skills')" class="action-button">
                                         Editar
                                     </button>
 
-                                    <button 
-                                        @click="deleteStack(stack.id)" class="action-button">
+                                    <button @click="deleteStack(stack.id)" class="action-button">
                                         Borrar
                                     </button>
                                 </div>
-                               
+
                             </td>
                         </tr>
                     </tbody>
@@ -69,42 +56,48 @@ const stacks = ['Frontend', 'Backend', 'User UX/UI', 'Web Design'];
 
 
 <style scoped>
-.container_stack{
+.container_stack {
     background-color: #FF4702;
     height: 85vh;
     padding: 5%;
     background-size: cover;
     background-repeat: no-repeat;
 }
+
 .back_button {
-    background-color:white;
+    background-color: white;
     border-radius: 10px;
     padding: 10px;
 }
-h3{
+
+h3 {
     color: white;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin:1rem;
+    margin: 1rem;
 }
+
 .new_stack_select {
     display: flex;
     flex-direction: row;
-    justify-content:space-evenly;
+    justify-content: space-evenly;
 }
+
 .button {
-    background-color:white;
+    background-color: white;
     border-radius: 10px;
-    margin : 20px;
+    margin: 20px;
     padding: 10px;
 }
+
 .h4 {
-    display:flex ;
-    align-self:center;
-    color:white;
+    display: flex;
+    align-self: center;
+    color: white;
     margin: 1rem;
 }
+
 /* .stacksList {
     display: grid;
     grid-gap: .8em;
@@ -112,34 +105,39 @@ h3{
 #stacksList {
     width: 100%;
 }
-#stacksList th, #stacksList td {
+
+#stacksList th,
+#stacksList td {
     padding: 8px;
     text-align: left;
     border-bottom: 1px solid #ccc;
 }
+
 #stacksList th {
     background-color: white;
     color: #FF4702;
 }
+
 #stacksList tbody tr:nth-child(odd) {
     background-color: #f2f2f2;
 }
+
 .action-button {
     background-color: #FF4702;
     color: white;
     border: none;
     border-radius: 5px;
     padding: 5px 8px;
-    margin:5px;
+    margin: 5px;
     cursor: pointer;
 }
 
 .action-button:hover {
     background-color: #E04106;
 }
+
 .btn_row {
-    display:flex ;
+    display: flex;
     flex-direction: row;
 }
-
 </style>

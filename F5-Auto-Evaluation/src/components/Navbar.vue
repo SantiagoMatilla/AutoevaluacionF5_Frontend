@@ -8,11 +8,11 @@
       <img class="logo" src="../assets/images/Logo-FF5.png" alt="Logo F5">
     </div>
     <v-spacer></v-spacer>
-    <button :to="{ name: 'Dashboard' }">Dashboard</button>
+    <router-link :to="{ name: 'Dashboard' }" class="link">Dashboard</router-link>
     <v-spacer></v-spacer>
-    <button :to="{ name: 'Stack' }">Evaluar</button>
+    <router-link :to="{ name: 'Stacks' }" class="link">Evaluar</router-link>
     <v-spacer></v-spacer>
-    <button class="button" :to="{ name: 'Teacher' }">Sección Formadores</button>
+    <router-link :to="{ name: 'Teacher' }" class="link">Sección Formadores</router-link>
     <v-spacer></v-spacer>
     <a href="">
       <img class="userMenu" src="../assets/images/User-menu.png" alt="User Menu">
@@ -20,12 +20,16 @@
   </v-toolbar>
 </template>
 
-
 <style scoped>
 .logo {
   height: 100px;
   margin-left: 15px;
   margin-top: 10px;
+}
+
+.link {
+  text-decoration: none;
+  color: black;
 }
 
 .userMenu {

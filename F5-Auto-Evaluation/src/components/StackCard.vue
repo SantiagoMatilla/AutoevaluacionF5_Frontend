@@ -2,12 +2,11 @@
 import stackDataService from '../services/stackDataService';
 import { ref, onBeforeMount } from 'vue';
 
-
 const stack = ref([]);
 
 const fetchStack = async () => {
   try {
-    var response = await stackDataService.getAllStacks();
+    let response = await stackDataService.getAllStacks();
     stack.value = response.data;
   } catch (error) {
     console.error(error);
@@ -15,19 +14,14 @@ const fetchStack = async () => {
 };
 
 onBeforeMount(fetchStack);
-
 </script> 
   
 <template>
   <div class="card-container">
-    
     <v-card v-for="eachStack in stack" :key="eachStack.id" class="card">
       <v-img :src="eachStack.image" class="card-image" />
       <v-card-title class="card-title">{{ eachStack.name }}</v-card-title>
       <v-divider :thickness="3" color="warning"></v-divider>
-      <v-card-skills>
-       
-      </v-card-skills>
       <v-card-actions>
         <v-btn class="accessButton" variant="text" @click="nombreBoton">
           Acceder
@@ -39,32 +33,30 @@ onBeforeMount(fetchStack);
 
 <style scoped>
 .card-container {
-  display: flex; 
-  justify-content:center; 
+  display: flex;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   padding: 20px;
   background-color: var(--primaryColor);
-  
- 
   width: 100%;
   height: 100%;
 }
 
 .card {
-  flex: 0 0 calc(30% - 20px); 
-  margin: 30px; 
- max-width: 400px;
- margin: 50px;
+  flex: 0 0 calc(30% - 20px);
+  margin: 30px;
+  max-width: 400px;
+  margin: 50px;
 }
 
 .card:nth-child(n+4) {
-  flex: 0 0 calc(45% - 20px); 
+  flex: 0 0 calc(45% - 20px);
 }
 
 .card-image {
-  max-height: 200px; 
- 
+  max-height: 200px;
+
 }
 
 .card-title {

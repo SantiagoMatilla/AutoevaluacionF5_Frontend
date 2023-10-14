@@ -13,4 +13,8 @@ import LoginForm from '../components/LoginForm.vue'
 body {
     display: flex;
 }
+
+img {
+    max-width: 80%;
+}
 </style>

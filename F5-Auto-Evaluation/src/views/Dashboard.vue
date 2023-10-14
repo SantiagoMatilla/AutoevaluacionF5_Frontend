@@ -5,17 +5,23 @@ import CoEvaluation from '../components/CoEvaluation.vue'
 </script>
 
 <template>
-  <Navbar />
-  <div class="container">
-    <SelfEvaluation />
-    <CoEvaluation />
-  </div>
+  <section>
+    <Navbar />
+    <div class="container">
+      <SelfEvaluation />
+      <CoEvaluation />
+    </div>
+  </section>
 </template>
   
 <style scoped>
+section {
+  width: 100%;
+  height: 100%;
+}
 .container {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;

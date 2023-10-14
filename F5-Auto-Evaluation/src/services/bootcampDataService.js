@@ -16,9 +16,9 @@ class bootcampDataService {
     return http.put(`/updateBootcamp/${id}`, data);
   }
 
-    deleteBootcamp(id) {
-        return http.delete(`/deleteBootcamp/${id}`);
-    }
+  deleteBootcamp(id) {
+    return http.delete(`/deleteBootcamp/${id}`);
+  }
 }
 
 export default new bootcampDataService();

@@ -1,12 +1,11 @@
 <script setup>
-import TeacherCabinet from '../components/TeacherCabinet.vue';
-   
+import Navbar from '../components/Navbar.vue';
+import TeacherMain from '../components/TeacherMain.vue';
 </script>
+
 <template>
-    <TeacherCabinet />
+    <Navbar />
+    <TeacherMain />
 </template>
 
-
-<style scoped>
-
-</style>
+<style scoped></style>

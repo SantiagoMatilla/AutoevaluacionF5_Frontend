@@ -1,37 +1,35 @@
 <script setup>
-// const bootcamps = ['DA', 'FEM', 'Rural Camp', 'UniqueCamp' ]
+import bootcampDataService from '../services/bootcampDataService';
+import { ref, onBeforeMount } from "vue";
+
+const bootcamps = ref();
+
+function getBootcamps() {
+  bootcampDataService.getAllBootcamps()
+    .then((response) => {
+      bootcamps.value = response.data;
+    });
+}
+
+onBeforeMount(() => {
+  getBootcamps();
+});
 </script>
+
 <template>
   <v-container fluid class="container">
     <div class="content">
       <h3>Selecciona el bootcamp a editar</h3>
-      <v-select
-        bg-color="white"
-        label="Nombre de bootcamp"
-        v-model="selectedBootcamp"
-        class="select_bootcamp"
-      >
+      <v-select bg-color="white" label="Nombre de bootcamp" v-model="selectedBootcamp" class="select_bootcamp">
         <option v-for="bootcamp in bootcamps" :key="bootcamp.id">
           {{ bootcamp }}
         </option>
       </v-select>
       <div class="buttons_box">
-        <v-button
-          class="buttons"
-          @click="$router.push('/assign-coders')"
-          type="submit"
-          name="AssignCoder"
-          id=""
-        >
+        <v-button class="buttons" @click="$router.push('/assign-coders')" type="submit" name="AssignCoder">
           Asignar coders
         </v-button>
-        <!-- <v-button class="buttons" :to="{name:'CoderAssign'}">Asignar coders</v-button> -->
-        <v-button
-          class="buttons"
-          @click="$router.push('/assign-stacks')"
-          type="submit"
-          name="AssignStacks"
-        >
+        <v-button class="buttons" @click="$router.push('/assign-stacks')" type="submit" name="AssignStacks">
           Editar contenido
         </v-button>
       </div>
@@ -72,7 +70,6 @@ h3 {
   width: inherit;
   display: flex;
   flex-direction: row;
-  /* justify-content:center ; */
   justify-content: space-evenly;
 }
 
@@ -83,10 +80,4 @@ h3 {
   margin: 20px;
   padding: 10px;
 }
-
-/* .bootcamp{
-  margin-top: 30%;
-
-  background-color: white;
-} */
 </style>

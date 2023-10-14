@@ -1,11 +1,9 @@
 <script setup>
 const criteriaArray = ["Investigar", "Recordar", "Comprender", "Aplicar", "Analizar", "Crear", "Evaluar"];
-
 </script>
 
-
 <template>
-   <v-item-group multiple>
+  <v-item-group multiple>
     <v-container>
       <v-row>
         <v-col v-for="n in 7" :key="n">
@@ -22,7 +20,7 @@ const criteriaArray = ["Investigar", "Recordar", "Comprender", "Aplicar", "Anali
         </v-col>
       </v-row>
     </v-container>
-  </v-item-group> 
+  </v-item-group>
 </template>
 
 
