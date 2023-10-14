@@ -1,16 +1,11 @@
- 
-
-
-
 <script setup>
 import Navbar from '../components/Navbar.vue';
 import ContentCard from '../components/ContentCard.vue'
 import stackDataService from '../services/stackDataService';
 import skillDataService from '../services/skillDataService';
 import contentDataService from '../services/contentDataService';
-import { ref, onBeforeMount  } from "vue";
+import { ref, onBeforeMount } from "vue";
 import { useRoute } from "vue-router";
-
 
 const route = useRoute();
 const stack = ref();
@@ -24,10 +19,9 @@ function chooseCoder() {
 
 function getStack(id) {
     stackDataService.getStackById(id).then((response) => {
-       stack.value  = response.data;
+        stack.value = response.data;
     });
 }
-
 
 function getSkills() {
     skillDataService.getAllSkills()
@@ -55,14 +49,14 @@ onBeforeMount(() => {
     <Navbar />
     <section class="banner">
         <div class="columnDiv" id="coderDiv">
-            <v-select class="coderSelection" label="Coder" :items="['Diego Córdoba', 'Manuela Grajales', 'María Villaverde']"
-                bg-color="white" density="compact">
+            <v-select class="coderSelection" label="Coder"
+                :items="['Diego Córdoba', 'Manuela Grajales', 'María Villaverde']" bg-color="white" density="compact">
             </v-select>
             <v-btn @click="chooseCoder">Evaluar</v-btn>
         </div>
         <div class="columnDiv">
-         <h1 v-if="stack">{{ stack.name }}</h1>
-         <div v-else>Loading...</div>
+            <h1 v-if="stack">{{ stack.name }}</h1>
+            <div v-else>Loading...</div>
         </div>
         <div class="columnDiv">
             <v-progress-circular color="white" bg-color="blue-grey-lighten-3" :size="100" :model-value="25" :width="12">
@@ -84,16 +78,16 @@ onBeforeMount(() => {
             </v-slide-group>
         </v-sheet>
     </section>
- <!-- eslint-disable-next-line -->
+    <!-- eslint-disable-next-line -->
     <ul>
         <li v-for="(skill, index) in skills" :key="index">
             <h2>{{ skill.name }}</h2>
             <ul>
-                <!-- eslint-disable-next-line --> 
+                <!-- eslint-disable-next-line -->
                 <template v-for="(content, index) in contents" :key="index">
-                   <li v-if="content.skill && skill.id === content.skill.id">
-        <ContentCard :content="content" />
-    </li>
+                    <li v-if="content.skill && skill.id === content.skill.id">
+                        <ContentCard :content="content" />
+                    </li>
                 </template>
             </ul>
         </li>

@@ -1,9 +1,53 @@
-<script>
-export default {
-  data: () => ({
-    tab: null,
-  }),
-}
+<script setup>
+import registrationService from '../services/registrationDataService';
+import { ref } from 'vue';
+import { useRouter } from 'vue-router';
+import axios from 'axios';
+
+const tab = ref('login'); 
+const loginErrorMessage = ref('');
+
+const router = useRouter();
+
+const loginData = ref({
+  email: '',
+  password: '',
+});
+
+const registrationData = ref({
+  firstName: '',
+  lastName: '',
+  phone:'',
+  email: '',
+  password: '',
+  repeatPassword: ''
+});
+
+const registeration = async () => {
+
+  await registrationService.save('saveUser', registrationData.value)
+    .then(() => {
+     alert("Registered successfully!");
+    router.push("/");
+  })
+    .catch(error => {
+      console.error("an error occured:", error);
+    });
+ 
+};
+const login = async (loginData) => {
+  axios.post('http://localhost:8080/login', loginData)
+    .then(() => {
+      alert("User successfully logged in!");
+      router.push("/dashboard")
+    })
+    .catch(error => {
+      console.error("Login failed:", error);
+      loginErrorMessage.value = "Wrong username or password. Please try again.";
+    });
+     
+};
+
 </script>
 
 <template>
@@ -13,48 +57,50 @@ export default {
     <h3>Bienvenid@ a tu autoevaluación</h3>
 
     <v-card class="loginCard">
-      <v-tabs class="tabsContainer" v-model="tab" bg-color="#FF4702" color="white" fixed-tabs>
-        <v-tab class="tab" value="login">Login</v-tab>
-        <v-tab class="tab" value="register">Registro</v-tab>
-      </v-tabs>
-
-      <v-card-text>
-        <v-window v-model="tab">
-          <v-window-item value="login">
-            <form class="loginForm">
-              <div class="loginContainer">
-                <v-text-field class="loginInput" label="Email" variant="underlined" type="email"></v-text-field>
-                <v-text-field class="loginInput" label="Contraseña" variant="underlined" type="password"></v-text-field>
-              </div>
-              <div class="buttonContainer">
-                <RouterLink to="/dashboard">
-                  <v-btn class="button">
+        <v-tabs class="tabsContainer" v-model="tab" bg-color="#FF4702" color="white" fixed-tabs>
+          <v-tab class="tab" value="login">Login</v-tab>
+          <v-tab class="tab" value="register">Registro</v-tab>
+        </v-tabs>
+        <v-card-text>
+          <v-window v-model="tab">
+            <v-window-item value="login">
+              <form class="loginForm" @submit.prevent="login(loginData)">
+                <div class="loginContainer">
+                  <v-text-field v-model="loginData.email" class="loginInput" label="Email" variant="underlined" type="email"></v-text-field>
+                  <v-text-field v-model="loginData.password" class="loginInput" label="Contraseña" variant="underlined" type="password"></v-text-field>
+                </div>
+                 <div v-if="loginErrorMessage" class="alert alert-danger" style="color: red;">{{ loginErrorMessage }}</div>
+                <div class="buttonContainer">
+                  <v-btn class="button" type="submit">
                     Entrar
                   </v-btn>
-                </RouterLink>
-              </div>
-            </form>
-          </v-window-item>
-
+                </div>
+              </form>
+            </v-window-item>
           <v-window-item value="register">
-            <form class="registerForm">
+            <form class="registerForm" @submit.prevent="registeration">
               <div class="registrationContainer">
                 <div class="registrationSection">
-                  <v-text-field class="registrationInput" label="Nombre" variant="underlined"></v-text-field>
-                  <v-text-field class="registrationInput" label="Apellidos" variant="underlined"></v-text-field>
+                  <v-text-field v-model="registrationData.firstName" class="registrationInput" label="Nombre"
+                    variant="underlined"></v-text-field>
+                  <v-text-field v-model="registrationData.lastName" class="registrationInput" label="Apellidos"
+                    variant="underlined"></v-text-field>
                 </div>
                 <div class="registrationSection">
-                  <v-text-field class="registrationInput" label="Email" variant="underlined" type="email"></v-text-field>
-                  <v-text-field class="registrationInput" label="Contraseña" variant="underlined"
-                    type="password"></v-text-field>
+                  <v-text-field v-model="registrationData.phone" class="registrationInput" label="phone"
+                    variant="underlined"></v-text-field>
+                  <v-text-field v-model="registrationData.email" class="registrationInput" label="Email"
+                    variant="underlined" type="email"></v-text-field>
                 </div>
                 <div class="registrationSection">
-                  <v-text-field class="registrationInput" label="Confirmar contraseña" variant="underlined"
-                    type="password"></v-text-field>
+                   <v-text-field v-model="registrationData.password" class="registrationInput" label="Contraseña"
+                      variant="underlined" type="password"></v-text-field>
+                  <v-text-field v-model="registrationData.repeatPassword" class="registrationInput"
+                    label="Confirmar contraseña" variant="underlined" type="password"></v-text-field>
                 </div>
               </div>
               <div class="buttonContainer">
-                <v-btn class="button">
+                <v-btn class="button" type="submit">
                   Registrarse
                 </v-btn>
               </div>
@@ -133,5 +179,4 @@ h3 {
 
 .forgotPassword {
   text-align: center;
-}
-</style>
+}</style>
