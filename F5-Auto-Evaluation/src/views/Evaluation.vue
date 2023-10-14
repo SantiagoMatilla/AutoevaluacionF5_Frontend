@@ -50,14 +50,13 @@ onBeforeMount(() => {
     <Navbar />
     <section class="banner">
         <div class="columnDiv" id="coderDiv">
-            <v-select class="coderSelection" label="Coder"
+            <v-select id="coderSelection" class="coderSelection" label="Coder"
                 :items="['Diego Córdoba', 'Manuela Grajales', 'María Villaverde']" bg-color="white" density="compact">
             </v-select>
             <v-btn @click="chooseCoder">Evaluar</v-btn>
         </div>
         <div class="columnDiv">
-            <h1 v-if="stack">{{ stack.name }}</h1>
-            <div v-else>Loading...</div>
+            <h1>{{ stack.name }}</h1>
         </div>
         <div class="columnDiv">
             <v-progress-circular color="white" bg-color="blue-grey-lighten-3" :size="100" :model-value="25" :width="12">
