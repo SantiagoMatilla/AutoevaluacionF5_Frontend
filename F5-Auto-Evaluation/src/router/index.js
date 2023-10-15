@@ -8,6 +8,8 @@ import AssignCoders from "../views/AssignCoders.vue"
 import AssignContents from "../views/AssignContents.vue"
 import AssignSkills from "../views/AssignSkills.vue"
 import AssignStacks from "../views/AssignStacks.vue"
+//
+import StackCard from "../components/StackCard.vue"
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -43,12 +45,6 @@ const router = createRouter({
     },
 
     {
-      path: "/teacher",
-      name: "Teacher",
-      component: Teacher,
-    },
-
-    {
       path: "/assign-coders",
       name: "AssignCoders",
       component: AssignCoders,
@@ -70,6 +66,12 @@ const router = createRouter({
       path: "/assign-stacks",
       name: "AssignStacks",
       component: AssignStacks,
+    },
+
+    {
+      path: '/stack-card',
+      name: 'StackCard',
+      component: StackCard,
     },
   ],
 });
