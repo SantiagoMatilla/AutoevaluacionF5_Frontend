@@ -14,7 +14,7 @@
     <v-spacer></v-spacer>
     <button class="button" :to="{ name: 'Teacher' }">Sección Formadores</button>
     <v-spacer></v-spacer>
-    <a href="">
+    <a href="/">
       <img class="userMenu" src="../assets/images/User-menu.png" alt="User Menu">
     </a>
   </v-toolbar>

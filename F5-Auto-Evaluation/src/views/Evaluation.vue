@@ -4,17 +4,37 @@ import ContentCard from '../components/ContentCard.vue'
 import stackDataService from '../services/stackDataService';
 import skillDataService from '../services/skillDataService';
 import contentDataService from '../services/contentDataService';
+import coders from '../services/registrationDataService';
 import { ref, onBeforeMount } from "vue";
 import { useRoute } from "vue-router";
 
-const route = useRoute();
+const router = useRoute();
+const users = ref([]);
+const selectedUser = ref(null);
+const selectedCoder = ref("Choose Coder")
 const stack = ref();
 const skills = ref();
-const contents = ref();
+const contents = ref([]);
 
+// retreive user data from database
 function chooseCoder() {
-    const chosenCoder = document.getElementById("coderSelection").value;
-    document.getElementById("coderName").innerHTML = chosenCoder;
+    coders.getAll('users').then((response) => {
+
+        users.value = response.data;
+
+    }).catch(error => {
+        console.error("Coder not found!", error);
+    });
+}
+
+// bind the selected coder to the artice h2 section
+async function assessUser() {
+    if (selectedCoder.value !== "Choose Coder") {
+
+        selectedUser.value = users.value.find(user => user.id === selectedCoder.value);
+    } else {
+        alert("Please select a coder before assessing.");
+    }
 }
 
 function getStack(id) {
@@ -38,21 +58,24 @@ function getContents() {
 }
 
 onBeforeMount(() => {
-    getStack(route.params.id);
+    chooseCoder();
+    getStack(router.params.id);
     getSkills();
     getContents();
 });
 
 </script>
-
 <template>
     <Navbar />
     <section class="banner">
         <div class="columnDiv" id="coderDiv">
-            <v-select class="coderSelection" label="Coder"
-                :items="['Diego Córdoba', 'Manuela Grajales', 'María Villaverde']" bg-color="white" density="compact">
-            </v-select>
-            <v-btn @click="chooseCoder">Evaluar</v-btn>
+
+            <select id="firtsname" name="firtsname" class="form-control" v-model="selectedCoder" required>
+                <option disabled>Choose Coder</option>
+                <option v-for="user in users" :key="user.id" :value="user.id">{{ user.firstName + " " + user.lastName
+                }}</option>
+            </select> <br>
+            <button @click="assessUser">Assess</button>
         </div>
         <div class="columnDiv">
             <h1 v-if="stack">{{ stack.name }}</h1>
@@ -66,7 +89,9 @@ onBeforeMount(() => {
     </section>
     <section class="evaluationDetails">
         <article>
-            <h2 id="coderName"></h2>
+            <h2 id="coderName">
+                {{ selectedUser ? "Selected Coder: " + selectedUser.firstName + " " + selectedUser.lastName :'' }}
+            </h2>
         </article>
         <v-sheet class="mx-auto">
             <v-slide-group show-arrows>

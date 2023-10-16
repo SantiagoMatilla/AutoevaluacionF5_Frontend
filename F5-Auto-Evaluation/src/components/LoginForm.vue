@@ -2,9 +2,8 @@
 import registrationService from '../services/registrationDataService';
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
-import axios from 'axios';
 
-const tab = ref('login'); 
+const tab = ref('login');
 const loginErrorMessage = ref('');
 
 const router = useRouter();
@@ -17,7 +16,7 @@ const loginData = ref({
 const registrationData = ref({
   firstName: '',
   lastName: '',
-  phone:'',
+  phone: '',
   email: '',
   password: '',
   repeatPassword: ''
@@ -27,16 +26,16 @@ const registeration = async () => {
 
   await registrationService.save('saveUser', registrationData.value)
     .then(() => {
-     alert("Registered successfully!");
-    router.push("/");
-  })
+      alert("Registered successfully!");
+      router.push("/");
+    })
     .catch(error => {
       console.error("an error occured:", error);
     });
- 
+
 };
 const login = async (loginData) => {
-  axios.post('http://localhost:8080/login', loginData)
+ await registrationService.login('login', loginData)
     .then(() => {
       alert("User successfully logged in!");
       router.push("/dashboard")
@@ -45,7 +44,7 @@ const login = async (loginData) => {
       console.error("Login failed:", error);
       loginErrorMessage.value = "Wrong username or password. Please try again.";
     });
-     
+
 };
 
 </script>
@@ -57,26 +56,28 @@ const login = async (loginData) => {
     <h3>Bienvenid@ a tu autoevaluación</h3>
 
     <v-card class="loginCard">
-        <v-tabs class="tabsContainer" v-model="tab" bg-color="#FF4702" color="white" fixed-tabs>
-          <v-tab class="tab" value="login">Login</v-tab>
-          <v-tab class="tab" value="register">Registro</v-tab>
-        </v-tabs>
-        <v-card-text>
-          <v-window v-model="tab">
-            <v-window-item value="login">
-              <form class="loginForm" @submit.prevent="login(loginData)">
-                <div class="loginContainer">
-                  <v-text-field v-model="loginData.email" class="loginInput" label="Email" variant="underlined" type="email"></v-text-field>
-                  <v-text-field v-model="loginData.password" class="loginInput" label="Contraseña" variant="underlined" type="password"></v-text-field>
-                </div>
-                 <div v-if="loginErrorMessage" class="alert alert-danger" style="color: red;">{{ loginErrorMessage }}</div>
-                <div class="buttonContainer">
-                  <v-btn class="button" type="submit">
-                    Entrar
-                  </v-btn>
-                </div>
-              </form>
-            </v-window-item>
+      <v-tabs class="tabsContainer" v-model="tab" bg-color="#FF4702" color="white" fixed-tabs>
+        <v-tab class="tab" value="login">Login</v-tab>
+        <v-tab class="tab" value="register">Registro</v-tab>
+      </v-tabs>
+      <v-card-text>
+        <v-window v-model="tab">
+          <v-window-item value="login">
+            <form class="loginForm" @submit.prevent="login(loginData)">
+              <div class="loginContainer">
+                <v-text-field v-model="loginData.email" class="loginInput" label="Email" variant="underlined"
+                  type="email"></v-text-field>
+                <v-text-field v-model="loginData.password" class="loginInput" label="Contraseña" variant="underlined"
+                  type="password"></v-text-field>
+              </div>
+              <div v-if="loginErrorMessage" class="alert alert-danger" style="color: red;">{{ loginErrorMessage }}</div>
+              <div class="buttonContainer">
+                <v-btn class="button" type="submit">
+                  Entrar
+                </v-btn>
+              </div>
+            </form>
+          </v-window-item>
           <v-window-item value="register">
             <form class="registerForm" @submit.prevent="registeration">
               <div class="registrationContainer">
@@ -93,8 +94,8 @@ const login = async (loginData) => {
                     variant="underlined" type="email"></v-text-field>
                 </div>
                 <div class="registrationSection">
-                   <v-text-field v-model="registrationData.password" class="registrationInput" label="Contraseña"
-                      variant="underlined" type="password"></v-text-field>
+                  <v-text-field v-model="registrationData.password" class="registrationInput" label="Contraseña"
+                    variant="underlined" type="password"></v-text-field>
                   <v-text-field v-model="registrationData.repeatPassword" class="registrationInput"
                     label="Confirmar contraseña" variant="underlined" type="password"></v-text-field>
                 </div>
