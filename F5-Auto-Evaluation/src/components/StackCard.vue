@@ -31,7 +31,7 @@ const redirectToEvaluation = (stackId) => {
       <v-img :src="eachStack.image" class="card-image" />
       <v-card-title class="card-title">{{ eachStack.name }}</v-card-title>
       <v-divider :thickness="3" color="warning"></v-divider>
-      <v-card-actions>
+      <v-card-actions class="button-container">
         <v-btn class="accessButton" variant="text" @click="redirectToEvaluation(eachStack.id)">
           Acceder
         </v-btn>
@@ -73,6 +73,11 @@ const redirectToEvaluation = (stackId) => {
   text-align: center;
 }
 
+.button-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
 .accessButton {
   color: rgb(247, 247, 247);
   background-color: rgb(248, 74, 16);
