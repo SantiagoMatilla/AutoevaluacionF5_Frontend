@@ -4,9 +4,8 @@ import ContentCard from '../components/ContentCard.vue'
 import stackDataService from '../services/stackDataService';
 import skillDataService from '../services/skillDataService';
 import contentDataService from '../services/contentDataService';
-import { ref, onBeforeMount } from "vue";
+import { ref, onBeforeMount, computed } from "vue";
 import { useRoute } from "vue-router";
-
 
 const route = useRoute();
 const stack = ref();
@@ -38,12 +37,18 @@ function getContents() {
         });
 }
 
+const filteredSkills = computed(() => {
+    if (stack.value && skills.value) {
+        return skills.value.filter(skill => skill.stack.id === stack.value.id);
+    }
+    return [];
+});
+
 onBeforeMount(() => {
     getStack(route.params.id);
     getSkills();
     getContents();
 });
-
 </script>
 
 <template>
@@ -78,12 +83,13 @@ onBeforeMount(() => {
             </v-slide-group>
         </v-sheet>
     </section>
+
     <ul>
-        <li v-for="(skill, index) in skills" :key="index">
-            <h2 v-if="stack.id == skills[index].stack.id">{{ skill.name }}</h2>
+        <li v-for="(skill, index) in filteredSkills" :key="index">
+            <h2>{{ skill.name }}</h2>
             <ul>
-                <template v-for="(content, index) in contents" :key="index">
-                    <li v-if="skill.id == contents[index].skill.id">
+                <template v-for="(content) in contents" :key="content.id">
+                    <li v-if="content.skill && skill.id === content.skill.id">
                         <ContentCard :content="content" />
                     </li>
                 </template>
