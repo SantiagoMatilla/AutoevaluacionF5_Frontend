@@ -5,7 +5,7 @@ import stackDataService from '../services/stackDataService';
 import skillDataService from '../services/skillDataService';
 import contentDataService from '../services/contentDataService';
 import coders from '../services/registrationDataService';
-import { ref, onBeforeMount } from "vue";
+import { ref, onBeforeMount, computed } from "vue";
 import { useRoute } from "vue-router";
 
 const router = useRoute();
@@ -56,6 +56,12 @@ function getContents() {
             contents.value = response.data;
         });
 }
+const filteredSkills = computed(() => {
+    if (stack.value && skills.value) {
+        return skills.value.filter(skill => skill.stack.id === stack.value.id);
+    }
+    return [];
+});
 
 onBeforeMount(() => {
     chooseCoder();
@@ -105,11 +111,11 @@ onBeforeMount(() => {
     </section>
     <!-- eslint-disable-next-line -->
     <ul>
-        <li v-for="(skill, index) in skills" :key="index">
+        <li v-for="(skill, index) in filteredSkills" :key="index">
             <h2>{{ skill.name }}</h2>
             <ul>
                 <!-- eslint-disable-next-line -->
-                <template v-for="(content, index) in contents" :key="index">
+                <template v-for="(content) in contents" :key="content.id">
                     <li v-if="content.skill && skill.id === content.skill.id">
                         <ContentCard :content="content" />
                     </li>
