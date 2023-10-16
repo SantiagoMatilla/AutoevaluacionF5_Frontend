@@ -1,8 +1,10 @@
 <script setup>
 import stackDataService from '../services/stackDataService';
 import { ref, onBeforeMount } from 'vue';
+import { useRouter } from 'vue-router';
 
 const stack = ref([]);
+const router = useRouter();
 
 const fetchStack = async () => {
   try {
@@ -14,6 +16,13 @@ const fetchStack = async () => {
 };
 
 onBeforeMount(fetchStack);
+
+const redirectToEvaluation = (stackId) => {
+  console.log("STACK ID: " + stackId);
+  const evaluationPath = `/evaluation/${stackId}`;
+  console.log("ROUTER PUSH  " + evaluationPath);
+  router.push(evaluationPath);
+};
 </script> 
   
 <template>
@@ -23,7 +32,7 @@ onBeforeMount(fetchStack);
       <v-card-title class="card-title">{{ eachStack.name }}</v-card-title>
       <v-divider :thickness="3" color="warning"></v-divider>
       <v-card-actions>
-        <v-btn class="accessButton" variant="text" @click="nombreBoton">
+        <v-btn class="accessButton" variant="text" @click="redirectToEvaluation(eachStack.id)">
           Acceder
         </v-btn>
       </v-card-actions>
@@ -69,4 +78,3 @@ onBeforeMount(fetchStack);
   background-color: rgb(248, 74, 16);
 }
 </style>
-
