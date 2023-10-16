@@ -59,11 +59,14 @@ Nuestra aplicación tiene como objetivo ayudarte en tu proceso de autoevaluació
 Si deseas clonar y ejecutar este repositorio en tu entorno local, sigue estos pasos:
 
 1. Requisitos Previos: Asegúrate de tener instalados Node.js y Java en tu sistema.
+
 2. Clonar el Repositorio: git clone <URL_DEL_REPOSITORIO>
+
 3. Configuración del Frontend (Vue.js y Vuetify):
    * Navega a la carpeta 'F5-Auto-Evaluation' en el proyecto.
    * Instala las dependencias del frontend con "npm install" y "npm install axios".
    * Inicia la aplicación Vue.js con "npm run dev".
+
 4. Configuración del Backend (Spring Boot):
     * Enlace al repositorio: https://github.com/SantiagoMatilla/AutoevaluacionF5_Backend
     * Abre el proyecto Spring Boot en tu IDE.
