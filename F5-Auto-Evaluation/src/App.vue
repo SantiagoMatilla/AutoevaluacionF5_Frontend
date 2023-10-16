@@ -6,12 +6,11 @@ import { RouterView } from 'vue-router'
   <body>
     <RouterView />
   </body>
-
 </template>
 
 <style scoped>
- body {
+body {
   width: 100vw;
   height: 100vh;
-} 
+}
 </style>

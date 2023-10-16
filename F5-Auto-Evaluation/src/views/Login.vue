@@ -17,4 +17,10 @@ body {
 img {
     max-width: 80%;
 }
+
+@media only screen and (max-width: 1440px) {
+  img {
+    max-width: 60%;
+}
+}
 </style>
