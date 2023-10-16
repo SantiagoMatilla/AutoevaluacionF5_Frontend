@@ -1,5 +1,5 @@
 <p align="center"> 
-<img src="https://cdn.domestika.org/c_fill,dpr_auto,t_base_params.format_jpg/v1597739395/job-covers/000/080/184/80184-original.png?1597739395"  width="400" height="250">
+<img src="https://cdn.domestika.org/c_fill,dpr_auto,t_base_params.format_jpg/v1597739395/job-covers/000/080/184/80184-original.png?1597739395"  height="250">
 </p>
 
 ---
@@ -7,20 +7,19 @@
 
 ## Contenido del repositorio
 
-* Introducción.
+* Sobre la página.
 * Proyecto. Requisitos Stakeholder.
 * Stacks Tecnológicos usados.
-* Sobre la página.
 * Instalación en caso de clonar repositorio.
 * Equipo de trabajo.
 
 ---
 
-## Introducción
+## Sobre la página
 
-Desarrollar un sistema que permita que un coder pueda hacer una autoevaluación de
-acuerdo con las tecnologías y competencias trabajadas en el bootcamp. También tiene que
-permitir una coevaluación de sus colegas.
+Bienvenido a la página de la Aplicación web de Autoevaluación de Factoría F5. Nuestra plataforma ha sido diseñada para ayudar a los coders a realizar autoevaluaciones y coevaluaciones en el contexto de un bootcamp. El objetivo principal es permitir a los coders evaluar sus habilidades y competencias adquiridas durante el programa de formación, así como invitar a sus colegas a realizar evaluaciones conjuntas.
+Nuestra aplicación tiene como objetivo ayudarte en tu proceso de autoevaluación y coevaluación, brindándote una plataforma robusta y fácil de usar. ¡Esperamos que disfrutes utilizando nuestra aplicación web!
+
 
 ## Proyecto. Requisitos Stakeholder
 
@@ -29,7 +28,7 @@ permitir una coevaluación de sus colegas.
 * El sistema DEBE permitirle al coder invitar a hacer una coevaluación a un coder de
   su bootcamp.  
 * El sistema DEBE asignar una coevaluación máximo a una persona.
-* Aplicación testeada con una cobertura del 70% .
+* Aplicación testeada con una cobertura del 50% .
 * Desplegar la aplicación.
 * Hacer uso de Git .
 * Implementar bases de datos relacionales.
@@ -55,11 +54,6 @@ permitir una coevaluación de sus colegas.
 </p>
 
 
-## Sobre la página
-
-Bienvenido a la página de la Aplicación web de Autoevaluación. Nuestra plataforma ha sido diseñada para ayudar a los coders a realizar autoevaluaciones y coevaluaciones en el contexto de un bootcamp. El objetivo principal es permitir a los coders evaluar sus habilidades y competencias adquiridas durante el programa de formación, así como invitar a sus colegas a realizar evaluaciones conjuntas.
-Nuestra aplicación tiene como objetivo ayudarte en tu proceso de autoevaluación y coevaluación, brindándote una plataforma robusta y fácil de usar. ¡Esperamos que disfrutes utilizando nuestra aplicación web!
-
 ## Instalación en caso de clonar repositorio
 
 Si deseas clonar y ejecutar este repositorio en tu entorno local, sigue estos pasos:
@@ -67,10 +61,11 @@ Si deseas clonar y ejecutar este repositorio en tu entorno local, sigue estos pa
 1. Requisitos Previos: Asegúrate de tener instalados Node.js y Java en tu sistema.
 2. Clonar el Repositorio: git clone <URL_DEL_REPOSITORIO>
 3. Configuración del Frontend (Vue.js y Vuetify):
-   * Navega a la carpeta 'frontend' en el proyecto.
-   * Instala las dependencias del frontend con npm install o yarn install.
-   * Inicia la aplicación Vue.js con npm run serve o yarn serve.
+   * Navega a la carpeta 'F5-Auto-Evaluation' en el proyecto.
+   * Instala las dependencias del frontend con "npm install" y "npm install axios".
+   * Inicia la aplicación Vue.js con "npm run dev".
 4. Configuración del Backend (Spring Boot):
+    * Enlace al repositorio: https://github.com/SantiagoMatilla/AutoevaluacionF5_Backend
     * Abre el proyecto Spring Boot en tu IDE.
     * Configura una base de datos según tus necesidades en application.properties.
     * Ejecuta la aplicación Spring Boot.
@@ -88,8 +83,8 @@ Si deseas clonar y ejecutar este repositorio en tu entorno local, sigue estos pa
 
 ## Equipo de trabajo
 
-* Victor Tejedor (https://github.com/victorteje).
-* Santiago Matilla (https://github.com/SantiagoMatilla) .
+* Santiago Matilla (Product Owner) (https://github.com/SantiagoMatilla) .
+* Victor Tejedor (Scrum Master) (https://github.com/victorteje).
+* Angela Coello (https://github.com/Angela-Coello) .
 * Brian Menendez (https://github.com/Brianclikclak) .
 * Nafisa Usmanova (https://github.com/NAFISA-USMANOVA) .
-* Angela Coello (https://github.com/Angela-Coello) .
